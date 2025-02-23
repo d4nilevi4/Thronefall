@@ -6,12 +6,12 @@ namespace Thronefall.Gameplay.Movement
     public class DirectionalDeltaMoveSystem : IExecuteSystem
     {
         private readonly ITimeService _time;
-        private readonly IGroup<GameEntity> _movers;
+        private readonly IGroup<GameEntity> _movables;
 
         public DirectionalDeltaMoveSystem(GameContext contextParameter, ITimeService time)
         {
             _time = time;
-            _movers = contextParameter.GetGroup(GameMatcher
+            _movables = contextParameter.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Direction,
                     GameMatcher.WorldPosition,
@@ -20,9 +20,9 @@ namespace Thronefall.Gameplay.Movement
 
         public void Execute()
         {
-            foreach (GameEntity entity in _movers)
+            foreach (GameEntity movable in _movables)
             {
-                entity.ReplaceWorldPosition(entity.WorldPosition + entity.Direction * entity.Speed * _time.DeltaTime);
+                movable.ReplaceWorldPosition(movable.WorldPosition + movable.Direction * movable.Speed * _time.DeltaTime);
             }
         }
     }

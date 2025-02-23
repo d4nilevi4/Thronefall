@@ -1,5 +1,6 @@
 using Thronefall.Gameplay.Common;
 using Thronefall.Gameplay.Input;
+using Thronefall.Gameplay.Movement;
 using Zenject;
 
 namespace Thronefall.Infrastructure
@@ -76,6 +77,7 @@ namespace Thronefall.Infrastructure
         private void BindGameplayServices()
         {
             Container.Bind<ITimeService>().To<UnityTimeService>().AsSingle();
+            Container.Bind<ISurfaceDetectionService>().To<SurfaceDetectionService>().AsSingle();
         }
 
         private void BindGameplayFactories()

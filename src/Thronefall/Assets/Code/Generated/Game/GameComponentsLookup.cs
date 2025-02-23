@@ -14,9 +14,11 @@ public static class GameComponentsLookup {
     public const int Transform = 3;
     public const int WorldPosition = 4;
     public const int Direction = 5;
-    public const int Speed = 6;
+    public const int SlideOnSurface = 6;
+    public const int Speed = 7;
+    public const int SurfaceNormal = 8;
 
-    public const int TotalComponents = 7;
+    public const int TotalComponents = 9;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -25,7 +27,9 @@ public static class GameComponentsLookup {
         "Transform",
         "WorldPosition",
         "Direction",
-        "Speed"
+        "SlideOnSurface",
+        "Speed",
+        "SurfaceNormal"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -35,6 +39,8 @@ public static class GameComponentsLookup {
         typeof(Thronefall.Gameplay.Common.TransformComponent),
         typeof(Thronefall.Gameplay.Common.WorldPosition),
         typeof(Thronefall.Gameplay.Movement.Direction),
-        typeof(Thronefall.Gameplay.Movement.Speed)
+        typeof(Thronefall.Gameplay.Movement.SlideOnSurface),
+        typeof(Thronefall.Gameplay.Movement.Speed),
+        typeof(Thronefall.Gameplay.Movement.SurfaceNormal)
     };
 }
