@@ -15,7 +15,9 @@ namespace Thronefall.Gameplay.Movement
                 .AllOf(
                     GameMatcher.Direction,
                     GameMatcher.WorldPosition,
-                    GameMatcher.Speed));
+                    GameMatcher.Speed,
+                    GameMatcher.Moving,
+                    GameMatcher.MovementAvailable));
         }
 
         public void Execute()
