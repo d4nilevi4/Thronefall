@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Thronefall.Common;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherSelfDestructTimer;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public SelfDestructTimer selfDestructTimer { get { return (SelfDestructTimer)GetComponent(GameComponentsLookup.SelfDestructTimer); } }
+    public Thronefall.Common.SelfDestructTimer selfDestructTimer { get { return (Thronefall.Common.SelfDestructTimer)GetComponent(GameComponentsLookup.SelfDestructTimer); } }
     public float SelfDestructTimer { get { return selfDestructTimer.Value; } }
     public bool hasSelfDestructTimer { get { return HasComponent(GameComponentsLookup.SelfDestructTimer); } }
 
     public GameEntity AddSelfDestructTimer(float newValue) {
         var index = GameComponentsLookup.SelfDestructTimer;
-        var component = (SelfDestructTimer)CreateComponent(index, typeof(SelfDestructTimer));
+        var component = (Thronefall.Common.SelfDestructTimer)CreateComponent(index, typeof(Thronefall.Common.SelfDestructTimer));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceSelfDestructTimer(float newValue) {
         var index = GameComponentsLookup.SelfDestructTimer;
-        var component = (SelfDestructTimer)CreateComponent(index, typeof(SelfDestructTimer));
+        var component = (Thronefall.Common.SelfDestructTimer)CreateComponent(index, typeof(Thronefall.Common.SelfDestructTimer));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

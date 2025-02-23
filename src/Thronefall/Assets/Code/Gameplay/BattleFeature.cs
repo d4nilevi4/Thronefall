@@ -1,4 +1,5 @@
 ﻿using Thronefall.Common.Destruct;
+using Thronefall.Gameplay.Input;
 using Thronefall.Infrastructure;
 
 namespace Thronefall.Gameplay
@@ -8,6 +9,8 @@ namespace Thronefall.Gameplay
         public BattleFeature(ISystemFactory systemFactory)
         {
             Add(systemFactory.Create<ProcessDestructedFeature>());
+            
+            Add(systemFactory.Create<InputFeature>());
         }
     }
 }

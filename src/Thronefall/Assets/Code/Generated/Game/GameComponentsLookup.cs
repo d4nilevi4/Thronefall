@@ -6,10 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Thronefall.Common;
-using Thronefall.Gameplay.Common;
-
 public static class GameComponentsLookup {
 
     public const int Destructed = 0;
@@ -29,10 +25,10 @@ public static class GameComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(Destructed),
-        typeof(SelfDestructTimer),
-        typeof(Id),
-        typeof(TransformComponent),
-        typeof(WorldPosition)
+        typeof(Thronefall.Common.Destructed),
+        typeof(Thronefall.Common.SelfDestructTimer),
+        typeof(Thronefall.Gameplay.Common.Id),
+        typeof(Thronefall.Gameplay.Common.TransformComponent),
+        typeof(Thronefall.Gameplay.Common.WorldPosition)
     };
 }

@@ -1,4 +1,5 @@
 using Thronefall.Gameplay.Common;
+using Thronefall.Gameplay.Input;
 using Zenject;
 
 namespace Thronefall.Infrastructure
@@ -69,7 +70,7 @@ namespace Thronefall.Infrastructure
 
         private void BindInputService()
         {
-            // Container.BindInterfacesTo<StandaloneInputService>().AsSingle();
+            Container.BindInterfacesTo<InputService>().AsSingle();
         }
 
         private void BindGameplayServices()

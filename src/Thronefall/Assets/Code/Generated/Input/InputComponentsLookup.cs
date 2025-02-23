@@ -6,24 +6,23 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Thronefall.Common;
-using Thronefall.Gameplay.Input;
-
 public static class InputComponentsLookup {
 
     public const int Destructed = 0;
     public const int Input = 1;
+    public const int InputAxis = 2;
 
-    public const int TotalComponents = 2;
+    public const int TotalComponents = 3;
 
     public static readonly string[] componentNames = {
         "Destructed",
-        "Input"
+        "Input",
+        "InputAxis"
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(Destructed),
-        typeof(Input)
+        typeof(Thronefall.Common.Destructed),
+        typeof(Thronefall.Gameplay.Input.Input),
+        typeof(Thronefall.Gameplay.Input.InputAxis)
     };
 }

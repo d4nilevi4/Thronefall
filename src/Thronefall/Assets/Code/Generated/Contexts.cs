@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Thronefall.Gameplay.Common;
-
 public partial class Contexts : Entitas.IContexts {
 
     public static Contexts sharedInstance {
@@ -68,7 +65,7 @@ public partial class Contexts {
         game.AddEntityIndex(new Entitas.PrimaryEntityIndex<GameEntity, int>(
             Id,
             game.GetGroup(GameMatcher.Id),
-            (e, c) => ((Id)c).Value));
+            (e, c) => ((Thronefall.Gameplay.Common.Id)c).Value));
     }
 }
 
