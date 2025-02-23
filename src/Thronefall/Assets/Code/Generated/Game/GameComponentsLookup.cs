@@ -13,15 +13,19 @@ public static class GameComponentsLookup {
     public const int Id = 2;
     public const int Transform = 3;
     public const int WorldPosition = 4;
+    public const int Direction = 5;
+    public const int Speed = 6;
 
-    public const int TotalComponents = 5;
+    public const int TotalComponents = 7;
 
     public static readonly string[] componentNames = {
         "Destructed",
         "SelfDestructTimer",
         "Id",
         "Transform",
-        "WorldPosition"
+        "WorldPosition",
+        "Direction",
+        "Speed"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -29,6 +33,8 @@ public static class GameComponentsLookup {
         typeof(Thronefall.Common.SelfDestructTimer),
         typeof(Thronefall.Gameplay.Common.Id),
         typeof(Thronefall.Gameplay.Common.TransformComponent),
-        typeof(Thronefall.Gameplay.Common.WorldPosition)
+        typeof(Thronefall.Gameplay.Common.WorldPosition),
+        typeof(Thronefall.Gameplay.Movement.Direction),
+        typeof(Thronefall.Gameplay.Movement.Speed)
     };
 }
