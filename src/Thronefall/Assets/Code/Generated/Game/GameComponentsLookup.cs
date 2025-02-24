@@ -14,17 +14,18 @@ public static class GameComponentsLookup {
     public const int ViewPath = 3;
     public const int ViewPrefab = 4;
     public const int Hero = 5;
-    public const int Id = 6;
-    public const int Direction = 7;
-    public const int MovementAvailable = 8;
-    public const int Moving = 9;
-    public const int SlideOnSurface = 10;
-    public const int Speed = 11;
-    public const int SurfaceNormal = 12;
-    public const int Transform = 13;
-    public const int WorldPosition = 14;
+    public const int HeroAnimator = 6;
+    public const int Id = 7;
+    public const int Direction = 8;
+    public const int MovementAvailable = 9;
+    public const int Moving = 10;
+    public const int SlideOnSurface = 11;
+    public const int Speed = 12;
+    public const int SurfaceNormal = 13;
+    public const int Transform = 14;
+    public const int WorldPosition = 15;
 
-    public const int TotalComponents = 15;
+    public const int TotalComponents = 16;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -33,6 +34,7 @@ public static class GameComponentsLookup {
         "ViewPath",
         "ViewPrefab",
         "Hero",
+        "HeroAnimator",
         "Id",
         "Direction",
         "MovementAvailable",
@@ -51,6 +53,7 @@ public static class GameComponentsLookup {
         typeof(Thronefall.Common.ViewPath),
         typeof(Thronefall.Common.ViewPrefab),
         typeof(Thronefall.Gameplay.Hero.Hero),
+        typeof(Thronefall.Gameplay.Hero.HeroAnimatorComponent),
         typeof(Thronefall.Gameplay.Id),
         typeof(Thronefall.Gameplay.Movement.Direction),
         typeof(Thronefall.Gameplay.Movement.MovementAvailable),

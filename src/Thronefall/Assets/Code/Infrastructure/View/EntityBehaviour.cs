@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Thronefall.Infrastructure
 {
-    public abstract class EntityBehaviour : MonoBehaviour, IEntityView
+    public class EntityBehaviour : MonoBehaviour, IEntityView
     {
         private GameEntity _entity;
 

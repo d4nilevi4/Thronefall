@@ -1,5 +1,4 @@
 ﻿using Entitas;
-using Thronefall.Gameplay;
 
 namespace Thronefall.Gameplay.Movement
 {

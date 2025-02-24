@@ -6,12 +6,10 @@ namespace Thronefall.Infrastructure
     {
         public EntityBehaviour EntityView;
 
-        public GameEntity Entity => EntityView?.Entity;
+        public GameEntity Entity => EntityBehaviour?.Entity;
 
-        private void Awake()
-        {
-            if (!EntityView)
-                EntityView = GetComponent<EntityBehaviour>();
-        }
+        private EntityBehaviour EntityBehaviour => EntityView ??= 
+            GetComponent<EntityBehaviour>() 
+            ?? GetComponent<EntityBehaviorProvider>().EntityBehaviour;
     }
 }
