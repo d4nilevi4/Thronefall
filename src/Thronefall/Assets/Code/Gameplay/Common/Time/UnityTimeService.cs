@@ -1,6 +1,6 @@
 using System;
 
-namespace Thronefall.Gameplay.Common
+namespace Thronefall.Gameplay
 {
     public class UnityTimeService : ITimeService
     {

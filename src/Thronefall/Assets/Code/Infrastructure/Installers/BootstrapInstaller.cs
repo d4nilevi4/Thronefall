@@ -1,4 +1,4 @@
-using Thronefall.Gameplay.Common;
+using Thronefall.Gameplay;
 using Thronefall.Gameplay.Input;
 using Thronefall.Gameplay.Movement;
 using Zenject;

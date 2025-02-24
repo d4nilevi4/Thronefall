@@ -1,5 +1,5 @@
 ﻿using Cysharp.Threading.Tasks;
-using Thronefall.Gameplay.Common;
+using Thronefall.Gameplay;
 using Zenject;
 
 namespace Thronefall.Infrastructure

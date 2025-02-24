@@ -13,16 +13,16 @@ public static class GameComponentsLookup {
     public const int View = 2;
     public const int ViewPath = 3;
     public const int ViewPrefab = 4;
-    public const int Id = 5;
-    public const int Transform = 6;
-    public const int WorldPosition = 7;
-    public const int Hero = 8;
-    public const int Direction = 9;
-    public const int MovementAvailable = 10;
-    public const int Moving = 11;
-    public const int SlideOnSurface = 12;
-    public const int Speed = 13;
-    public const int SurfaceNormal = 14;
+    public const int Hero = 5;
+    public const int Id = 6;
+    public const int Direction = 7;
+    public const int MovementAvailable = 8;
+    public const int Moving = 9;
+    public const int SlideOnSurface = 10;
+    public const int Speed = 11;
+    public const int SurfaceNormal = 12;
+    public const int Transform = 13;
+    public const int WorldPosition = 14;
 
     public const int TotalComponents = 15;
 
@@ -32,16 +32,16 @@ public static class GameComponentsLookup {
         "View",
         "ViewPath",
         "ViewPrefab",
-        "Id",
-        "Transform",
-        "WorldPosition",
         "Hero",
+        "Id",
         "Direction",
         "MovementAvailable",
         "Moving",
         "SlideOnSurface",
         "Speed",
-        "SurfaceNormal"
+        "SurfaceNormal",
+        "Transform",
+        "WorldPosition"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -50,15 +50,15 @@ public static class GameComponentsLookup {
         typeof(Thronefall.Common.View),
         typeof(Thronefall.Common.ViewPath),
         typeof(Thronefall.Common.ViewPrefab),
-        typeof(Thronefall.Gameplay.Common.Id),
-        typeof(Thronefall.Gameplay.Common.TransformComponent),
-        typeof(Thronefall.Gameplay.Common.WorldPosition),
         typeof(Thronefall.Gameplay.Hero.Hero),
+        typeof(Thronefall.Gameplay.Id),
         typeof(Thronefall.Gameplay.Movement.Direction),
         typeof(Thronefall.Gameplay.Movement.MovementAvailable),
         typeof(Thronefall.Gameplay.Movement.Moving),
         typeof(Thronefall.Gameplay.Movement.SlideOnSurface),
         typeof(Thronefall.Gameplay.Movement.Speed),
-        typeof(Thronefall.Gameplay.Movement.SurfaceNormal)
+        typeof(Thronefall.Gameplay.Movement.SurfaceNormal),
+        typeof(Thronefall.Gameplay.TransformComponent),
+        typeof(Thronefall.Gameplay.WorldPosition)
     };
 }

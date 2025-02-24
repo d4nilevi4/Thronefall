@@ -2,7 +2,7 @@
 using Entitas.CodeGeneration.Attributes;
 using UnityEngine;
 
-namespace Thronefall.Gameplay.Common
+namespace Thronefall.Gameplay
 {
     [Game] public class Id : IComponent { [PrimaryEntityIndex] public int Value; }
     [Game] public class WorldPosition : IComponent { public Vector3 Value; }

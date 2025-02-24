@@ -1,5 +1,5 @@
 using Entitas;
-using Thronefall.Gameplay.Common;
+using Thronefall.Gameplay;
 
 namespace Thronefall.Infrastructure
 {

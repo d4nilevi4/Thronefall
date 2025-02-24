@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Thronefall.Gameplay.Common.WorldPosition worldPosition { get { return (Thronefall.Gameplay.Common.WorldPosition)GetComponent(GameComponentsLookup.WorldPosition); } }
+    public Thronefall.Gameplay.WorldPosition worldPosition { get { return (Thronefall.Gameplay.WorldPosition)GetComponent(GameComponentsLookup.WorldPosition); } }
     public UnityEngine.Vector3 WorldPosition { get { return worldPosition.Value; } }
     public bool hasWorldPosition { get { return HasComponent(GameComponentsLookup.WorldPosition); } }
 
     public GameEntity AddWorldPosition(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.WorldPosition;
-        var component = (Thronefall.Gameplay.Common.WorldPosition)CreateComponent(index, typeof(Thronefall.Gameplay.Common.WorldPosition));
+        var component = (Thronefall.Gameplay.WorldPosition)CreateComponent(index, typeof(Thronefall.Gameplay.WorldPosition));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceWorldPosition(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.WorldPosition;
-        var component = (Thronefall.Gameplay.Common.WorldPosition)CreateComponent(index, typeof(Thronefall.Gameplay.Common.WorldPosition));
+        var component = (Thronefall.Gameplay.WorldPosition)CreateComponent(index, typeof(Thronefall.Gameplay.WorldPosition));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using Entitas;
-using Thronefall.Gameplay.Common;
+using Thronefall.Gameplay;
 
 namespace Thronefall.Common.Destruct
 {

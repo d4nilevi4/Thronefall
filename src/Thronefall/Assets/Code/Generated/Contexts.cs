@@ -65,7 +65,7 @@ public partial class Contexts {
         game.AddEntityIndex(new Entitas.PrimaryEntityIndex<GameEntity, int>(
             Id,
             game.GetGroup(GameMatcher.Id),
-            (e, c) => ((Thronefall.Gameplay.Common.Id)c).Value));
+            (e, c) => ((Thronefall.Gameplay.Id)c).Value));
     }
 }
 
