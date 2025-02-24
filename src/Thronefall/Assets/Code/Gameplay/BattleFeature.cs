@@ -11,6 +11,7 @@ namespace Thronefall.Gameplay
         public BattleFeature(ISystemFactory systemFactory)
         {
             Add(systemFactory.Create<InputFeature>());
+            Add(systemFactory.Create<BindViewFeature>());
             
             Add(systemFactory.Create<HeroFeature>());
             

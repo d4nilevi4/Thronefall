@@ -82,6 +82,7 @@ namespace Thronefall.Infrastructure
 
         private void BindGameplayFactories()
         {
+            Container.Bind<IEntityViewFactory>().To<EntityViewFactory>().AsSingle();
         }
     }
 }

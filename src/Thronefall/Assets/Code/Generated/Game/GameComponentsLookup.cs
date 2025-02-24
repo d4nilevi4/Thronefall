@@ -10,22 +10,28 @@ public static class GameComponentsLookup {
 
     public const int Destructed = 0;
     public const int SelfDestructTimer = 1;
-    public const int Id = 2;
-    public const int Transform = 3;
-    public const int WorldPosition = 4;
-    public const int Hero = 5;
-    public const int Direction = 6;
-    public const int MovementAvailable = 7;
-    public const int Moving = 8;
-    public const int SlideOnSurface = 9;
-    public const int Speed = 10;
-    public const int SurfaceNormal = 11;
+    public const int View = 2;
+    public const int ViewPath = 3;
+    public const int ViewPrefab = 4;
+    public const int Id = 5;
+    public const int Transform = 6;
+    public const int WorldPosition = 7;
+    public const int Hero = 8;
+    public const int Direction = 9;
+    public const int MovementAvailable = 10;
+    public const int Moving = 11;
+    public const int SlideOnSurface = 12;
+    public const int Speed = 13;
+    public const int SurfaceNormal = 14;
 
-    public const int TotalComponents = 12;
+    public const int TotalComponents = 15;
 
     public static readonly string[] componentNames = {
         "Destructed",
         "SelfDestructTimer",
+        "View",
+        "ViewPath",
+        "ViewPrefab",
         "Id",
         "Transform",
         "WorldPosition",
@@ -41,6 +47,9 @@ public static class GameComponentsLookup {
     public static readonly System.Type[] componentTypes = {
         typeof(Thronefall.Common.Destructed),
         typeof(Thronefall.Common.SelfDestructTimer),
+        typeof(Thronefall.Common.View),
+        typeof(Thronefall.Common.ViewPath),
+        typeof(Thronefall.Common.ViewPrefab),
         typeof(Thronefall.Gameplay.Common.Id),
         typeof(Thronefall.Gameplay.Common.TransformComponent),
         typeof(Thronefall.Gameplay.Common.WorldPosition),
