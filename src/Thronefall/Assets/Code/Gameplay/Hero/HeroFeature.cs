@@ -7,6 +7,7 @@ namespace Thronefall.Gameplay.Hero
         public HeroFeature(ISystemFactory systemFactory)
         {
             Add(systemFactory.Create<SetHeroDirectionByInputSystem>());
+            Add(systemFactory.Create<AnimateHeroMovementSystem>());
         }
     }
 }

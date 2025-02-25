@@ -8,6 +8,8 @@ namespace Thronefall.Common.Destruct
         {
             Add(systems.Create<SelfDestructTimerSystem>());
 
+            Add(systems.Create<CleanupGameDestructedViewSystem>());
+            
             Add(systems.Create<CleanupGameDestructedSystem>());
             Add(systems.Create<CleanupInputDestructedSystem>());
         }
