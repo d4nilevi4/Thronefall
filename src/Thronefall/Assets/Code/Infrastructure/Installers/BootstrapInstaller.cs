@@ -67,6 +67,7 @@ namespace Thronefall.Infrastructure
         private void BindCommonServices()
         {
             Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
+            Container.Bind<ICollisionRegistry>().To<CollisionRegistry>().AsSingle();
         }
 
         private void BindInputService()
