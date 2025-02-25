@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Linq;
+using System.Text;
 using Entitas;
+using Thronefall.Common;
 using Thronefall.Common.Entity;
+using Thronefall.Gameplay.Hero;
 using UnityEngine;
 
 // ReSharper disable once CheckNamespace
@@ -30,11 +33,8 @@ public sealed partial class GameEntity : INamedEntity
             {
                 switch (component.GetType().Name)
                 {
-                    // case nameof(Hero):
-                    //   return PrintHero();
-                    //
-                    // case nameof(Enemy):
-                    //   return PrintEnemy();
+                    case nameof(Hero):
+                      return PrintHero();
                 }
             }
         }
@@ -46,17 +46,11 @@ public sealed partial class GameEntity : INamedEntity
         return components.First().GetType().Name;
     }
 
-    // private string PrintHero()
-    // {
-    //   return new StringBuilder($"Hero ")
-    //     .With(s => s.Append($"Id:{Id}"), when: hasId)
-    //     .ToString();
-    // }
-    //
-    // private string PrintEnemy() =>
-    //   new StringBuilder($"Enemy ")
-    //     .With(s => s.Append($"Id:{Id}"), when: hasId)
-    //     .ToString();
-
+    private string PrintHero()
+    {
+      return new StringBuilder($"Hero ")
+        .With(s => s.Append($"Id:{Id}"), when: hasId)
+        .ToString();
+    }
     public string BaseToString() => base.ToString();
 }
