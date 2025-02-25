@@ -20,9 +20,9 @@ namespace Thronefall.Gameplay.Hero
                 .AddId(_identifierService.Next())
                 .AddWorldPosition(at)
                 .AddDirection(Vector3.zero)
-                .AddSpeed(2f)
+                .AddSpeed(5f)
                 .AddViewPath("Gameplay/Hero/HeroView")
-                // .With(x => x.isSlideOnSurface = true)
+                .With(x => x.isSlideOnSurface = true)
                 .With(x => x.isHero = true)
                 .With(x => x.isMovementAvailable = true)
                 ;
