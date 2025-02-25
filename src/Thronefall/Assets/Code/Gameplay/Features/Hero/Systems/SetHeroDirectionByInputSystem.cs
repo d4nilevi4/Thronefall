@@ -1,4 +1,5 @@
 ﻿using Entitas;
+using UnityEngine;
 
 namespace Thronefall.Gameplay.Hero
 {
@@ -16,8 +17,7 @@ namespace Thronefall.Gameplay.Hero
 
             _inputs = input.GetGroup(InputMatcher
                 .AllOf(
-                    InputMatcher.Input,
-                    InputMatcher.InputAxis));
+                    InputMatcher.Input));
         }
 
         public void Execute()
@@ -28,7 +28,7 @@ namespace Thronefall.Gameplay.Hero
                 hero.isMoving = input.hasInputAxis;
 
                 if (input.hasInputAxis) 
-                    hero.ReplaceDirection(input.InputAxis.normalized);
+                    hero.ReplaceDirection(new Vector3(input.InputAxis.x, 0, input.InputAxis.y));
             }
         }
     }

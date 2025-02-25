@@ -22,7 +22,7 @@ namespace Thronefall.Gameplay.Hero
                 .AddDirection(Vector3.zero)
                 .AddSpeed(2f)
                 .AddViewPath("Gameplay/Hero/HeroView")
-                .With(x => x.isSlideOnSurface = true)
+                // .With(x => x.isSlideOnSurface = true)
                 .With(x => x.isHero = true)
                 .With(x => x.isMovementAvailable = true)
                 ;
