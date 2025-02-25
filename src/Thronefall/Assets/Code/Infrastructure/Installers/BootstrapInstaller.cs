@@ -1,4 +1,5 @@
 using Thronefall.Gameplay;
+using Thronefall.Gameplay.Hero;
 using Thronefall.Gameplay.Input;
 using Thronefall.Gameplay.Movement;
 using Zenject;
@@ -84,6 +85,7 @@ namespace Thronefall.Infrastructure
         private void BindGameplayFactories()
         {
             Container.Bind<IEntityViewFactory>().To<EntityViewFactory>().AsSingle();
+            Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
         }
     }
 }
