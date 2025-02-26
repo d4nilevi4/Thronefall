@@ -8,7 +8,8 @@ namespace Thronefall.Gameplay.Input
         {
             Add(systemFactory.Create<InitializeInputSystem>());
             
-            Add(systemFactory.Create<EmitInputSystem>());
+            Add(systemFactory.Create<EmitWorldInputSystem>());
+            Add(systemFactory.Create<EmitCameraRelativeInputSystem>());
             
             Add(systemFactory.Create<TearDownInputSystem>());
         }

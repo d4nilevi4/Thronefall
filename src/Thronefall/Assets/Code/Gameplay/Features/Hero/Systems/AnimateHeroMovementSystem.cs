@@ -18,6 +18,7 @@ namespace Thronefall.Gameplay.Hero
             _inputs = input.GetGroup(InputMatcher
                 .AllOf(
                     InputMatcher.Input,
+                    InputMatcher.CameraRelativeInput,
                     InputMatcher.InputAxis));
         }
 

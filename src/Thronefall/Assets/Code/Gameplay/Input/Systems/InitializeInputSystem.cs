@@ -1,4 +1,5 @@
 ﻿using Entitas;
+using Thronefall.Common;
 using Thronefall.Common.Entity;
 
 namespace Thronefall.Gameplay.Input
@@ -8,7 +9,12 @@ namespace Thronefall.Gameplay.Input
         public void Initialize()
         {
             CreateInputEntity.Empty()
-                .isInput = true;
+                .With(x => x.isInput = true)
+                .With(x => x.isWorldInput = true);
+            
+            CreateInputEntity.Empty()
+                .With(x => x.isInput = true)
+                .With(x => x.isCameraRelativeInput = true);
         }
     }
 }
