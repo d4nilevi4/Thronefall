@@ -4,6 +4,7 @@ using Thronefall.Gameplay.Hero;
 using Thronefall.Gameplay.Input;
 using Thronefall.Gameplay.Levels;
 using Thronefall.Gameplay.Movement;
+using Thronefall.Gameplay.StaticData;
 using Zenject;
 
 namespace Thronefall.Infrastructure
@@ -84,6 +85,7 @@ namespace Thronefall.Infrastructure
             Container.Bind<ISurfaceDetectionService>().To<SurfaceDetectionService>().AsSingle();
             Container.Bind<ICameraProvider>().To<CameraProvider>().AsSingle();
             Container.Bind<ILevelDataProvider>().To<LevelDataProvider>().AsSingle();
+            Container.Bind<IStaticDataService>().To<StaticDataService>().AsSingle();
         }
 
         private void BindGameplayFactories()
