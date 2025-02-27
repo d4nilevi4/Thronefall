@@ -1,8 +1,9 @@
-﻿using Thronefall.Infrastructure;
+﻿using Thronefall.Common;
+using Thronefall.Infrastructure;
 
 namespace Thronefall.Gameplay.PhysXMovement
 {
-    public sealed class PhysXMovementFeature : Feature
+    public sealed class PhysXMovementFeature : DrawGizmoFeature
     {
         public PhysXMovementFeature(ISystemFactory systemFactory)
         {
@@ -17,6 +18,8 @@ namespace Thronefall.Gameplay.PhysXMovement
             Add(systemFactory.Create<AdjustVelocitySystem>());
             
             Add(systemFactory.Create<SynchronizePositionSystem>());
+            
+            Add(systemFactory.Create<PhysXDrawGizmoFeature>());
         }
     }
 }

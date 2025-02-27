@@ -1,3 +1,5 @@
+using System;
+using Thronefall.Common;
 using Thronefall.Gameplay;
 using Thronefall.Gameplay.Cameras;
 using Thronefall.Gameplay.Hero;
@@ -9,8 +11,10 @@ using Zenject;
 
 namespace Thronefall.Infrastructure
 {
-    public class BootstrapInstaller : MonoInstaller, ICoroutineRunner
+    public class BootstrapInstaller : MonoInstaller, ICoroutineRunner, IDrawGizmoReceiver
     {
+        public event Action EventDrawGizmo;
+
         public override void InstallBindings()
         {
             BindInputService();
@@ -72,6 +76,7 @@ namespace Thronefall.Infrastructure
         {
             Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
             Container.Bind<ICollisionRegistry>().To<CollisionRegistry>().AsSingle();
+            Container.Bind<IDrawGizmoReceiver>().FromInstance(this).AsSingle();
         }
 
         private void BindInputService()
@@ -92,6 +97,11 @@ namespace Thronefall.Infrastructure
         {
             Container.Bind<IEntityViewFactory>().To<EntityViewFactory>().AsSingle();
             Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
+        }
+
+        private void OnDrawGizmos()
+        {
+            EventDrawGizmo?.Invoke();
         }
     }
 }

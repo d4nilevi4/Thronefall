@@ -1,3 +1,4 @@
+using Thronefall.Common;
 using Thronefall.Gameplay;
 
 namespace Thronefall.Infrastructure
@@ -7,15 +8,21 @@ namespace Thronefall.Infrastructure
         private readonly ISystemFactory _systems;
         private BattleFeature _battleFeature;
         private readonly GameContext _gameContext;
+        private readonly IDrawGizmoReceiver _drawGizmoReceiver;
 
-        public BattleLoopState(ISystemFactory systems, GameContext gameContext)
+        public BattleLoopState(
+            ISystemFactory systems, 
+            GameContext gameContext,
+            IDrawGizmoReceiver drawGizmoReceiver)
         {
             _systems = systems;
             _gameContext = gameContext;
+            _drawGizmoReceiver = drawGizmoReceiver;
         }
 
         protected override void Enter()
         {
+            _drawGizmoReceiver.EventDrawGizmo += OnDrawGizmo;
             _battleFeature = _systems.Create<BattleFeature>();
             _battleFeature.Initialize();
         }
@@ -36,12 +43,19 @@ namespace Thronefall.Infrastructure
             _battleFeature.Cleanup();
             _battleFeature.TearDown();
             _battleFeature = null;
+            
+            _drawGizmoReceiver.EventDrawGizmo -= OnDrawGizmo;
         }
 
         private void DestructEntities()
         {
             foreach (GameEntity entity in _gameContext.GetEntities())
                 entity.isDestructed = true;
+        }
+
+        private void OnDrawGizmo()
+        {
+            _battleFeature.DrawGizmo();
         }
     }
 }
