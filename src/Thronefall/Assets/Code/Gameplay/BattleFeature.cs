@@ -1,5 +1,6 @@
 ﻿using Thronefall.Common;
 using Thronefall.Common.Destruct;
+using Thronefall.Gameplay.Cameras;
 using Thronefall.Gameplay.Hero;
 using Thronefall.Gameplay.Input;
 using Thronefall.Gameplay.PhysXMovement;
@@ -11,6 +12,8 @@ namespace Thronefall.Gameplay
     {
         public BattleFeature(ISystemFactory systemFactory)
         {
+            Add(systemFactory.Create<CamerasFeature>());
+            
             Add(systemFactory.Create<InputFeature>());
             Add(systemFactory.Create<BindViewFeature>());
             

@@ -388,6 +388,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Animator: {fileID: 6069276155137980764}
+--- !u!1 &739664958740862623
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4461496570656232475}
+  m_Layer: 0
+  m_Name: CameraLookPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4461496570656232475
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739664958740862623}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.513, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2362112632706586864}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &973085463977173157
 GameObject:
   m_ObjectHideFlags: 0
@@ -1679,6 +1710,7 @@ GameObject:
   - component: {fileID: 4059215679214475147}
   - component: {fileID: 1685242688776445368}
   - component: {fileID: 9086055515871065669}
+  - component: {fileID: 8459461786221810967}
   m_Layer: 0
   m_Name: '[Registrars]'
   m_TagString: Untagged
@@ -1756,6 +1788,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntityView: {fileID: 0}
   Rigidbody: {fileID: 7097253807804807837}
+--- !u!114 &8459461786221810967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5590811871572729913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 937ea22884a149e990d99d03687e1b95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: 0}
+  CameraLookPoint: {fileID: 4461496570656232475}
 --- !u!1 &5593885445234247850
 GameObject:
   m_ObjectHideFlags: 0
@@ -2333,6 +2379,7 @@ Transform:
   m_Children:
   - {fileID: 2335835128858179209}
   - {fileID: 2681184694100951724}
+  - {fileID: 4461496570656232475}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7882873252487623654
@@ -2394,7 +2441,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &8303576778096517484

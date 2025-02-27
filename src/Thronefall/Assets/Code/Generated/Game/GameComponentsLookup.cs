@@ -13,25 +13,26 @@ public static class GameComponentsLookup {
     public const int View = 2;
     public const int ViewPath = 3;
     public const int ViewPrefab = 4;
-    public const int Grounded = 5;
-    public const int GroundHit = 6;
-    public const int SurfaceNormal = 7;
-    public const int Hero = 8;
-    public const int HeroAnimator = 9;
-    public const int Id = 10;
-    public const int AffectedByGravity = 11;
-    public const int Direction = 12;
-    public const int MovementAvailable = 13;
-    public const int Moving = 14;
-    public const int PhysXMovable = 15;
-    public const int Rigidbody = 16;
-    public const int SlideOnSurface = 17;
-    public const int Speed = 18;
-    public const int Velocity = 19;
-    public const int Transform = 20;
-    public const int WorldPosition = 21;
+    public const int CameraLookPoint = 5;
+    public const int Grounded = 6;
+    public const int GroundHit = 7;
+    public const int SurfaceNormal = 8;
+    public const int Hero = 9;
+    public const int HeroAnimator = 10;
+    public const int Id = 11;
+    public const int AffectedByGravity = 12;
+    public const int Direction = 13;
+    public const int MovementAvailable = 14;
+    public const int Moving = 15;
+    public const int PhysXMovable = 16;
+    public const int Rigidbody = 17;
+    public const int SlideOnSurface = 18;
+    public const int Speed = 19;
+    public const int Velocity = 20;
+    public const int Transform = 21;
+    public const int WorldPosition = 22;
 
-    public const int TotalComponents = 22;
+    public const int TotalComponents = 23;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -39,6 +40,7 @@ public static class GameComponentsLookup {
         "View",
         "ViewPath",
         "ViewPrefab",
+        "CameraLookPoint",
         "Grounded",
         "GroundHit",
         "SurfaceNormal",
@@ -64,6 +66,7 @@ public static class GameComponentsLookup {
         typeof(Thronefall.Common.View),
         typeof(Thronefall.Common.ViewPath),
         typeof(Thronefall.Common.ViewPrefab),
+        typeof(Thronefall.Gameplay.Cameras.CameraLookPoint),
         typeof(Thronefall.Gameplay.GroundDetection.Grounded),
         typeof(Thronefall.Gameplay.GroundDetection.GroundHit),
         typeof(Thronefall.Gameplay.GroundDetection.SurfaceNormal),
