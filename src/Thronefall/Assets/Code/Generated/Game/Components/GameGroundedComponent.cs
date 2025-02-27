@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Thronefall.Gameplay.PhysXMovement.Grounded groundedComponent = new Thronefall.Gameplay.PhysXMovement.Grounded();
+    static readonly Thronefall.Gameplay.GroundDetection.Grounded groundedComponent = new Thronefall.Gameplay.GroundDetection.Grounded();
 
     public bool isGrounded {
         get { return HasComponent(GameComponentsLookup.Grounded); }

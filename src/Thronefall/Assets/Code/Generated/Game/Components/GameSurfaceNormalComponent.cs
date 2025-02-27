@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Thronefall.Gameplay.PhysXMovement.SurfaceNormal surfaceNormal { get { return (Thronefall.Gameplay.PhysXMovement.SurfaceNormal)GetComponent(GameComponentsLookup.SurfaceNormal); } }
+    public Thronefall.Gameplay.GroundDetection.SurfaceNormal surfaceNormal { get { return (Thronefall.Gameplay.GroundDetection.SurfaceNormal)GetComponent(GameComponentsLookup.SurfaceNormal); } }
     public UnityEngine.Vector3 SurfaceNormal { get { return surfaceNormal.Value; } }
     public bool hasSurfaceNormal { get { return HasComponent(GameComponentsLookup.SurfaceNormal); } }
 
     public GameEntity AddSurfaceNormal(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.SurfaceNormal;
-        var component = (Thronefall.Gameplay.PhysXMovement.SurfaceNormal)CreateComponent(index, typeof(Thronefall.Gameplay.PhysXMovement.SurfaceNormal));
+        var component = (Thronefall.Gameplay.GroundDetection.SurfaceNormal)CreateComponent(index, typeof(Thronefall.Gameplay.GroundDetection.SurfaceNormal));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceSurfaceNormal(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.SurfaceNormal;
-        var component = (Thronefall.Gameplay.PhysXMovement.SurfaceNormal)CreateComponent(index, typeof(Thronefall.Gameplay.PhysXMovement.SurfaceNormal));
+        var component = (Thronefall.Gameplay.GroundDetection.SurfaceNormal)CreateComponent(index, typeof(Thronefall.Gameplay.GroundDetection.SurfaceNormal));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

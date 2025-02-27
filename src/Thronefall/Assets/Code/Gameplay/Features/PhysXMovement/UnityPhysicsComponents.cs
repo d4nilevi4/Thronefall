@@ -10,8 +10,6 @@ namespace Thronefall.Gameplay.PhysXMovement
     [Game] public class Direction : IComponent { public Vector3 Value; }
     [Game] public class Moving : IComponent { }
     [Game] public class MovementAvailable : IComponent { }
-    [Game] public class SurfaceNormal : IComponent { public Vector3 Value; }
     [Game] public class SlideOnSurface : IComponent { }
-    [Game] public class Grounded : IComponent { }
     [Game] public class AffectedByGravity : IComponent { }
 }

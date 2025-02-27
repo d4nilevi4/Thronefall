@@ -7,7 +7,6 @@ namespace Thronefall.Gameplay.PhysXMovement
     {
         public PhysXDrawGizmoFeature(ISystemFactory systemFactory)
         {
-            Add(systemFactory.Create<CheckGroundDrawGizmoSystem>());
             Add(systemFactory.Create<DrawVelocityGizmoSystem>());
         }
     }

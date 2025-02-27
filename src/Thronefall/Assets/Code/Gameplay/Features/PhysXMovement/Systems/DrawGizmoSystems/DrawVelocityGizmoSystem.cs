@@ -6,17 +6,14 @@ namespace Thronefall.Gameplay.PhysXMovement
 {
     public class DrawVelocityGizmoSystem : IDrawGizmoSystem
     {
-        private readonly IGroundDetectionService _groundDetectionService;
         private readonly IGroup<GameEntity> _entities;
 
-        public DrawVelocityGizmoSystem(GameContext game, IGroundDetectionService groundDetectionService)
+        public DrawVelocityGizmoSystem(GameContext game)
         {
-            _groundDetectionService = groundDetectionService;
             _entities = game.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.WorldPosition,
                     GameMatcher.Velocity,
-                    GameMatcher.Moving,
                     GameMatcher.MovementAvailable));
         }
 
@@ -24,7 +21,6 @@ namespace Thronefall.Gameplay.PhysXMovement
         {
             foreach (GameEntity entity in _entities)
             {
-                Debug.Log("Gizmo drawing");
                 Gizmos.color = Color.blue;
                 Gizmos.DrawLine(entity.WorldPosition, entity.WorldPosition + entity.Velocity.normalized);
                 Gizmos.color = Color.white;
