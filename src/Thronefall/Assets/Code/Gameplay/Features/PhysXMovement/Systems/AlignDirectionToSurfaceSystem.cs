@@ -1,7 +1,7 @@
 using Entitas;
 using UnityEngine;
 
-namespace Thronefall.Gameplay.Movement
+namespace Thronefall.Gameplay.PhysXMovement
 {
     public class AlignDirectionToSurfaceSystem : IExecuteSystem
     {
@@ -11,18 +11,19 @@ namespace Thronefall.Gameplay.Movement
         {
             _entities = game.GetGroup(GameMatcher
                 .AllOf(
-                    GameMatcher.Direction,
+                    GameMatcher.Velocity,
                     GameMatcher.SlideOnSurface,
-                    GameMatcher.SurfaceNormal));
+                    GameMatcher.SurfaceNormal,
+                    GameMatcher.Moving));
         }
 
         public void Execute()
         {
             foreach (GameEntity entity in _entities)
             {
-                Vector3 projectedDirection = Vector3.ProjectOnPlane(entity.Direction, entity.SurfaceNormal).normalized;
+                Vector3 projectedDirection = Vector3.ProjectOnPlane(entity.Velocity, entity.SurfaceNormal).normalized;
 
-                entity.ReplaceDirection(projectedDirection);
+                entity.ReplaceVelocity(projectedDirection);
             }
         }
     }

@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherMovementAvailable;
+    static Entitas.IMatcher<GameEntity> _matcherPhysXMovable;
 
-    public static Entitas.IMatcher<GameEntity> MovementAvailable {
+    public static Entitas.IMatcher<GameEntity> PhysXMovable {
         get {
-            if (_matcherMovementAvailable == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.MovementAvailable);
+            if (_matcherPhysXMovable == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.PhysXMovable);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherMovementAvailable = matcher;
+                _matcherPhysXMovable = matcher;
             }
 
-            return _matcherMovementAvailable;
+            return _matcherPhysXMovable;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Thronefall.Gameplay.PhysXMovement.MovementAvailable movementAvailableComponent = new Thronefall.Gameplay.PhysXMovement.MovementAvailable();
+    static readonly Thronefall.Gameplay.PhysXMovement.PhysXMovable physXMovableComponent = new Thronefall.Gameplay.PhysXMovement.PhysXMovable();
 
-    public bool isMovementAvailable {
-        get { return HasComponent(GameComponentsLookup.MovementAvailable); }
+    public bool isPhysXMovable {
+        get { return HasComponent(GameComponentsLookup.PhysXMovable); }
         set {
-            if (value != isMovementAvailable) {
-                var index = GameComponentsLookup.MovementAvailable;
+            if (value != isPhysXMovable) {
+                var index = GameComponentsLookup.PhysXMovable;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : movementAvailableComponent;
+                            : physXMovableComponent;
 
                     AddComponent(index, component);
                 } else {

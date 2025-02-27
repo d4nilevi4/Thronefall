@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherMovementAvailable;
+    static Entitas.IMatcher<GameEntity> _matcherGrounded;
 
-    public static Entitas.IMatcher<GameEntity> MovementAvailable {
+    public static Entitas.IMatcher<GameEntity> Grounded {
         get {
-            if (_matcherMovementAvailable == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.MovementAvailable);
+            if (_matcherGrounded == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Grounded);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherMovementAvailable = matcher;
+                _matcherGrounded = matcher;
             }
 
-            return _matcherMovementAvailable;
+            return _matcherGrounded;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Thronefall.Gameplay.PhysXMovement.MovementAvailable movementAvailableComponent = new Thronefall.Gameplay.PhysXMovement.MovementAvailable();
+    static readonly Thronefall.Gameplay.PhysXMovement.Grounded groundedComponent = new Thronefall.Gameplay.PhysXMovement.Grounded();
 
-    public bool isMovementAvailable {
-        get { return HasComponent(GameComponentsLookup.MovementAvailable); }
+    public bool isGrounded {
+        get { return HasComponent(GameComponentsLookup.Grounded); }
         set {
-            if (value != isMovementAvailable) {
-                var index = GameComponentsLookup.MovementAvailable;
+            if (value != isGrounded) {
+                var index = GameComponentsLookup.Grounded;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : movementAvailableComponent;
+                            : groundedComponent;
 
                     AddComponent(index, component);
                 } else {

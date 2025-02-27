@@ -1,7 +1,7 @@
 ﻿using Thronefall.Common.Destruct;
 using Thronefall.Gameplay.Hero;
 using Thronefall.Gameplay.Input;
-using Thronefall.Gameplay.Movement;
+using Thronefall.Gameplay.PhysXMovement;
 using Thronefall.Infrastructure;
 
 namespace Thronefall.Gameplay
@@ -15,7 +15,7 @@ namespace Thronefall.Gameplay
             
             Add(systemFactory.Create<HeroFeature>());
             
-            Add(systemFactory.Create<MovementFeature>());
+            Add(systemFactory.Create<PhysXMovementFeature>());
             
             Add(systemFactory.Create<ProcessDestructedFeature>());
         }

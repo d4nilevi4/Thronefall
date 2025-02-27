@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Thronefall.Gameplay.Movement.Moving movingComponent = new Thronefall.Gameplay.Movement.Moving();
+    static readonly Thronefall.Gameplay.PhysXMovement.Moving movingComponent = new Thronefall.Gameplay.PhysXMovement.Moving();
 
     public bool isMoving {
         get { return HasComponent(GameComponentsLookup.Moving); }

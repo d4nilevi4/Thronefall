@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Thronefall.Gameplay.Movement.SlideOnSurface slideOnSurfaceComponent = new Thronefall.Gameplay.Movement.SlideOnSurface();
+    static readonly Thronefall.Gameplay.PhysXMovement.SlideOnSurface slideOnSurfaceComponent = new Thronefall.Gameplay.PhysXMovement.SlideOnSurface();
 
     public bool isSlideOnSurface {
         get { return HasComponent(GameComponentsLookup.SlideOnSurface); }

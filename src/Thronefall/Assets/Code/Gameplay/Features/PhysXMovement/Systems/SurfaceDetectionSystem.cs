@@ -1,17 +1,17 @@
 using Entitas;
 using UnityEngine;
 
-namespace Thronefall.Gameplay.Movement
+namespace Thronefall.Gameplay.PhysXMovement
 {
     public class SurfaceDetectionSystem : IExecuteSystem
     {
-        private readonly ISurfaceDetectionService _surfaceDetectionService;
+        private readonly IGroundDetectionService _groundDetectionService;
 
         private readonly IGroup<GameEntity> _entities;
 
-        public SurfaceDetectionSystem(GameContext game, ISurfaceDetectionService surfaceDetectionService)
+        public SurfaceDetectionSystem(GameContext game, IGroundDetectionService groundDetectionService)
         {
-            _surfaceDetectionService = surfaceDetectionService;
+            _groundDetectionService = groundDetectionService;
             
             _entities = game.GetGroup(GameMatcher
                 .AllOf(
@@ -23,7 +23,7 @@ namespace Thronefall.Gameplay.Movement
         {
             foreach (GameEntity entity in _entities)
             {
-                if (_surfaceDetectionService.TryGetSurfaceNormal(entity.WorldPosition, out Vector3 surfaceNormal))
+                if (_groundDetectionService.TryGetSurfaceNormal(entity.WorldPosition, out Vector3 surfaceNormal))
                     entity.ReplaceSurfaceNormal(surfaceNormal);
                 else if (entity.hasSurfaceNormal)
                     entity.RemoveSurfaceNormal();

@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Thronefall.Gameplay.Movement
+namespace Thronefall.Gameplay.PhysXMovement
 {
-    public class SurfaceDetectionService : ISurfaceDetectionService
+    public class GroundDetectionService : IGroundDetectionService
     {
         private const float RAY_OFFSET = .1f;
         
@@ -10,7 +10,7 @@ namespace Thronefall.Gameplay.Movement
         {
             origin.y += RAY_OFFSET;
 
-            if (Physics.Raycast(origin, Vector3.down, out var hit, RAY_OFFSET * 2))
+            if (Physics.Raycast(origin, Vector3.down, out var hit, RAY_OFFSET * 2, 1 << 8))
             {
                 normal = hit.normal;
                 return true;
@@ -19,5 +19,8 @@ namespace Thronefall.Gameplay.Movement
             normal = Vector3.zero;
             return false;
         }
+
+        public bool IsGrounded(Vector3 origin) =>
+            TryGetSurfaceNormal(origin, out Vector3 normal);
     }
 }

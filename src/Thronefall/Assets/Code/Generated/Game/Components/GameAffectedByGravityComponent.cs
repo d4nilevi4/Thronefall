@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherMovementAvailable;
+    static Entitas.IMatcher<GameEntity> _matcherAffectedByGravity;
 
-    public static Entitas.IMatcher<GameEntity> MovementAvailable {
+    public static Entitas.IMatcher<GameEntity> AffectedByGravity {
         get {
-            if (_matcherMovementAvailable == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.MovementAvailable);
+            if (_matcherAffectedByGravity == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.AffectedByGravity);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherMovementAvailable = matcher;
+                _matcherAffectedByGravity = matcher;
             }
 
-            return _matcherMovementAvailable;
+            return _matcherAffectedByGravity;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Thronefall.Gameplay.PhysXMovement.MovementAvailable movementAvailableComponent = new Thronefall.Gameplay.PhysXMovement.MovementAvailable();
+    static readonly Thronefall.Gameplay.PhysXMovement.AffectedByGravity affectedByGravityComponent = new Thronefall.Gameplay.PhysXMovement.AffectedByGravity();
 
-    public bool isMovementAvailable {
-        get { return HasComponent(GameComponentsLookup.MovementAvailable); }
+    public bool isAffectedByGravity {
+        get { return HasComponent(GameComponentsLookup.AffectedByGravity); }
         set {
-            if (value != isMovementAvailable) {
-                var index = GameComponentsLookup.MovementAvailable;
+            if (value != isAffectedByGravity) {
+                var index = GameComponentsLookup.AffectedByGravity;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : movementAvailableComponent;
+                            : affectedByGravityComponent;
 
                     AddComponent(index, component);
                 } else {

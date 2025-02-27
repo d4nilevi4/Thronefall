@@ -7,7 +7,6 @@ namespace Thronefall.Infrastructure
     {
         private readonly IAssetProvider _assetProvider;
         private readonly IInstantiator _instantiator;
-        private readonly Vector3 _farAway = new (9999, 9999, 9999);
 
         public EntityViewFactory(IAssetProvider assetProvider, IInstantiator instantiator)
         {
@@ -20,7 +19,7 @@ namespace Thronefall.Infrastructure
             EntityBehaviour viewPrefab = _assetProvider.LoadAsset<EntityBehaviour>(entity.ViewPath);
             EntityBehaviour view = _instantiator.InstantiatePrefabForComponent<EntityBehaviour>(
                 viewPrefab,
-                position: _farAway,
+                position: entity.WorldPosition,
                 rotation: Quaternion.identity,
                 parentTransform: null);
             
@@ -33,7 +32,7 @@ namespace Thronefall.Infrastructure
         {
             EntityBehaviour view = _instantiator.InstantiatePrefabForComponent<EntityBehaviour>(
                 entity.ViewPrefab,
-                position: _farAway,
+                position: entity.WorldPosition,
                 rotation: Quaternion.identity,
                 parentTransform: null);
             

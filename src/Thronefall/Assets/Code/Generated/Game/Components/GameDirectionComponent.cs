@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Thronefall.Gameplay.Movement.Direction direction { get { return (Thronefall.Gameplay.Movement.Direction)GetComponent(GameComponentsLookup.Direction); } }
+    public Thronefall.Gameplay.PhysXMovement.Direction direction { get { return (Thronefall.Gameplay.PhysXMovement.Direction)GetComponent(GameComponentsLookup.Direction); } }
     public UnityEngine.Vector3 Direction { get { return direction.Value; } }
     public bool hasDirection { get { return HasComponent(GameComponentsLookup.Direction); } }
 
     public GameEntity AddDirection(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.Direction;
-        var component = (Thronefall.Gameplay.Movement.Direction)CreateComponent(index, typeof(Thronefall.Gameplay.Movement.Direction));
+        var component = (Thronefall.Gameplay.PhysXMovement.Direction)CreateComponent(index, typeof(Thronefall.Gameplay.PhysXMovement.Direction));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceDirection(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.Direction;
-        var component = (Thronefall.Gameplay.Movement.Direction)CreateComponent(index, typeof(Thronefall.Gameplay.Movement.Direction));
+        var component = (Thronefall.Gameplay.PhysXMovement.Direction)CreateComponent(index, typeof(Thronefall.Gameplay.PhysXMovement.Direction));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

@@ -450,7 +450,7 @@ GameObject:
   - component: {fileID: 559390006}
   - component: {fileID: 559390005}
   - component: {fileID: 559390004}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -685,7 +685,7 @@ GameObject:
   - component: {fileID: 1421297193}
   - component: {fileID: 1421297192}
   - component: {fileID: 1421297191}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Prism
   m_TagString: Untagged
   m_Icon: {fileID: 0}

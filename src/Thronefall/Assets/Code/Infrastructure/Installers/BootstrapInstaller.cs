@@ -3,7 +3,7 @@ using Thronefall.Gameplay.Cameras;
 using Thronefall.Gameplay.Hero;
 using Thronefall.Gameplay.Input;
 using Thronefall.Gameplay.Levels;
-using Thronefall.Gameplay.Movement;
+using Thronefall.Gameplay.PhysXMovement;
 using Thronefall.Gameplay.StaticData;
 using Zenject;
 
@@ -82,7 +82,7 @@ namespace Thronefall.Infrastructure
         private void BindGameplayServices()
         {
             Container.Bind<ITimeService>().To<UnityTimeService>().AsSingle();
-            Container.Bind<ISurfaceDetectionService>().To<SurfaceDetectionService>().AsSingle();
+            Container.Bind<IGroundDetectionService>().To<GroundDetectionService>().AsSingle();
             Container.Bind<ICameraProvider>().To<CameraProvider>().AsSingle();
             Container.Bind<ILevelDataProvider>().To<LevelDataProvider>().AsSingle();
             Container.Bind<IStaticDataService>().To<StaticDataService>().AsSingle();

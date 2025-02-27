@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Thronefall.Gameplay.Movement.Speed speed { get { return (Thronefall.Gameplay.Movement.Speed)GetComponent(GameComponentsLookup.Speed); } }
+    public Thronefall.Gameplay.PhysXMovement.Speed speed { get { return (Thronefall.Gameplay.PhysXMovement.Speed)GetComponent(GameComponentsLookup.Speed); } }
     public float Speed { get { return speed.Value; } }
     public bool hasSpeed { get { return HasComponent(GameComponentsLookup.Speed); } }
 
     public GameEntity AddSpeed(float newValue) {
         var index = GameComponentsLookup.Speed;
-        var component = (Thronefall.Gameplay.Movement.Speed)CreateComponent(index, typeof(Thronefall.Gameplay.Movement.Speed));
+        var component = (Thronefall.Gameplay.PhysXMovement.Speed)CreateComponent(index, typeof(Thronefall.Gameplay.PhysXMovement.Speed));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceSpeed(float newValue) {
         var index = GameComponentsLookup.Speed;
-        var component = (Thronefall.Gameplay.Movement.Speed)CreateComponent(index, typeof(Thronefall.Gameplay.Movement.Speed));
+        var component = (Thronefall.Gameplay.PhysXMovement.Speed)CreateComponent(index, typeof(Thronefall.Gameplay.PhysXMovement.Speed));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;
