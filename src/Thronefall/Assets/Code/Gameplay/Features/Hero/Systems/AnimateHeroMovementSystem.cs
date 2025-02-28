@@ -13,13 +13,10 @@ namespace Thronefall.Gameplay.Hero
             _heroes = game.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Hero,
-                    GameMatcher.HeroAnimator));
-
-            _inputs = input.GetGroup(InputMatcher
-                .AllOf(
-                    InputMatcher.Input,
-                    InputMatcher.CameraRelativeInput,
-                    InputMatcher.InputAxis));
+                    GameMatcher.HeroAnimator,
+                    GameMatcher.Velocity,
+                    GameMatcher.Transform));
+            
         }
 
         public void Execute()
@@ -41,8 +38,21 @@ namespace Thronefall.Gameplay.Hero
 
         private void SetMoveAxis(GameEntity hero)
         {
-            foreach (InputEntity input in _inputs)
-                hero.HeroAnimator.SetMoveAxis(input.InputAxis.x, input.InputAxis.y);
+            Vector3 flatVelocity = new Vector3(hero.Velocity.x, 0, hero.Velocity.z);
+            
+            Vector3 forward = hero.Transform.forward;
+            Vector3 right = hero.Transform.right;
+            
+            forward.y = 0;
+            right.y = 0;
+            
+            forward.Normalize();
+            right.Normalize();
+
+            float forwardAmount = Vector3.Dot(flatVelocity.normalized, forward);
+            float rightAmount = Vector3.Dot(flatVelocity.normalized, right);
+
+            hero.HeroAnimator.SetMoveAxis(rightAmount, forwardAmount);
         }
     }
 }

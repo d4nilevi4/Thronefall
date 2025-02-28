@@ -29,6 +29,8 @@ namespace Thronefall.Gameplay.Hero
                 .AddVelocity(Vector3.zero)
                 .AddDirection(Vector3.zero)
                 .AddSpeed(config.Speed)
+                .With(x => x.isRotateTowardsVelocity = true)
+                .AddRotationSpeed(config.RotationSpeed)
                 .AddViewPrefab(config.ViewPrefab)
                 .With(x => x.isPhysXMovable = true)
                 .With(x => x.isAffectedByGravity = true)

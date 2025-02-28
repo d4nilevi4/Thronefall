@@ -29,10 +29,12 @@ public static class GameComponentsLookup {
     public const int SlideOnSurface = 18;
     public const int Speed = 19;
     public const int Velocity = 20;
-    public const int Transform = 21;
-    public const int WorldPosition = 22;
+    public const int RotateTowardsVelocity = 21;
+    public const int RotationSpeed = 22;
+    public const int Transform = 23;
+    public const int WorldPosition = 24;
 
-    public const int TotalComponents = 23;
+    public const int TotalComponents = 25;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -56,6 +58,8 @@ public static class GameComponentsLookup {
         "SlideOnSurface",
         "Speed",
         "Velocity",
+        "RotateTowardsVelocity",
+        "RotationSpeed",
         "Transform",
         "WorldPosition"
     };
@@ -82,6 +86,8 @@ public static class GameComponentsLookup {
         typeof(Thronefall.Gameplay.PhysXMovement.SlideOnSurface),
         typeof(Thronefall.Gameplay.PhysXMovement.Speed),
         typeof(Thronefall.Gameplay.PhysXMovement.Velocity),
+        typeof(Thronefall.Gameplay.Rotation.RotateTowardsVelocity),
+        typeof(Thronefall.Gameplay.Rotation.RotationSpeed),
         typeof(Thronefall.Gameplay.TransformComponent),
         typeof(Thronefall.Gameplay.WorldPosition)
     };

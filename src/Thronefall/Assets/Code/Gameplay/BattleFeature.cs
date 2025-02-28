@@ -4,6 +4,7 @@ using Thronefall.Gameplay.Cameras;
 using Thronefall.Gameplay.Hero;
 using Thronefall.Gameplay.Input;
 using Thronefall.Gameplay.PhysXMovement;
+using Thronefall.Gameplay.Rotation;
 using Thronefall.Infrastructure;
 
 namespace Thronefall.Gameplay
@@ -20,6 +21,7 @@ namespace Thronefall.Gameplay
             Add(systemFactory.Create<HeroFeature>());
             
             Add(systemFactory.Create<PhysXMovementFeature>());
+            Add(systemFactory.Create<RotationFeature>());
             
             Add(systemFactory.Create<ProcessDestructedFeature>());
         }
