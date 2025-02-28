@@ -7,12 +7,11 @@ namespace Thronefall.Gameplay.Navigation
 {
     public class RichNavigation : RichAI
     {
-        private Vector2 _currentDirection;
         private bool _lastReachedDestination;
 
         public event Action EventReachedDestination;
 
-        public Vector2 CurrentDirection => _currentDirection;
+        public Vector3 CurrentDirection { get; private set; }
 
         [Inject]
         private void Construct()
@@ -27,14 +26,15 @@ namespace Thronefall.Gameplay.Navigation
         
         protected override void OnUpdate(float deltaTime)
         {
-            if (shouldRecalculatePath) SearchPath();
+            if (shouldRecalculatePath) 
+                SearchPath();
             
             MovementUpdate(deltaTime, out var nextPosition, out _);
-        
-            _currentDirection = (nextPosition - transform.position);
-            _currentDirection.y = 0;
-            _currentDirection.Normalize();
-        
+
+            Vector3 direction = nextPosition - transform.position;
+            direction.y = 0;
+            CurrentDirection = direction.normalized;
+            
             CheckReachedDestination();
         }
         

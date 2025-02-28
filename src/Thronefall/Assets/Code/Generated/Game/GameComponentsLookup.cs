@@ -14,29 +14,32 @@ public static class GameComponentsLookup {
     public const int ViewPath = 3;
     public const int ViewPrefab = 4;
     public const int CameraLookPoint = 5;
-    public const int Grounded = 6;
-    public const int GroundHit = 7;
-    public const int SurfaceNormal = 8;
-    public const int Hero = 9;
-    public const int HeroAnimator = 10;
-    public const int Id = 11;
-    public const int RichNavigation = 12;
-    public const int Seeker = 13;
-    public const int AffectedByGravity = 14;
-    public const int Direction = 15;
-    public const int MovementAvailable = 16;
-    public const int Moving = 17;
-    public const int PhysXMovable = 18;
-    public const int Rigidbody = 19;
-    public const int SlideOnSurface = 20;
-    public const int Speed = 21;
-    public const int Velocity = 22;
-    public const int RotateTowardsVelocity = 23;
-    public const int RotationSpeed = 24;
-    public const int Transform = 25;
-    public const int WorldPosition = 26;
+    public const int EnemyTypeId = 6;
+    public const int Grounded = 7;
+    public const int GroundHit = 8;
+    public const int SurfaceNormal = 9;
+    public const int Hero = 10;
+    public const int HeroAnimator = 11;
+    public const int Id = 12;
+    public const int Agent = 13;
+    public const int AgentDestination = 14;
+    public const int RichNavigation = 15;
+    public const int Seeker = 16;
+    public const int AffectedByGravity = 17;
+    public const int Direction = 18;
+    public const int MovementAvailable = 19;
+    public const int Moving = 20;
+    public const int PhysXMovable = 21;
+    public const int Rigidbody = 22;
+    public const int SlideOnSurface = 23;
+    public const int Speed = 24;
+    public const int Velocity = 25;
+    public const int RotateTowardsVelocity = 26;
+    public const int RotationSpeed = 27;
+    public const int Transform = 28;
+    public const int WorldPosition = 29;
 
-    public const int TotalComponents = 27;
+    public const int TotalComponents = 30;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -45,12 +48,15 @@ public static class GameComponentsLookup {
         "ViewPath",
         "ViewPrefab",
         "CameraLookPoint",
+        "EnemyTypeId",
         "Grounded",
         "GroundHit",
         "SurfaceNormal",
         "Hero",
         "HeroAnimator",
         "Id",
+        "Agent",
+        "AgentDestination",
         "RichNavigation",
         "Seeker",
         "AffectedByGravity",
@@ -75,12 +81,15 @@ public static class GameComponentsLookup {
         typeof(Thronefall.Common.ViewPath),
         typeof(Thronefall.Common.ViewPrefab),
         typeof(Thronefall.Gameplay.Cameras.CameraLookPoint),
+        typeof(Thronefall.Gameplay.Enemies.EnemyTypeIdComponent),
         typeof(Thronefall.Gameplay.GroundDetection.Grounded),
         typeof(Thronefall.Gameplay.GroundDetection.GroundHit),
         typeof(Thronefall.Gameplay.GroundDetection.SurfaceNormal),
         typeof(Thronefall.Gameplay.Hero.Hero),
         typeof(Thronefall.Gameplay.Hero.HeroAnimatorComponent),
         typeof(Thronefall.Gameplay.Id),
+        typeof(Thronefall.Gameplay.Navigation.Agent),
+        typeof(Thronefall.Gameplay.Navigation.AgentDestination),
         typeof(Thronefall.Gameplay.Navigation.RichNavigationComponent),
         typeof(Thronefall.Gameplay.Navigation.SeekerComponent),
         typeof(Thronefall.Gameplay.PhysXMovement.AffectedByGravity),

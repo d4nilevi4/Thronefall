@@ -11,6 +11,7 @@ namespace Thronefall.Infrastructure
         public Camera MainCamera;
         public CinemachineCamera CinemachineCamera;
         public Transform StartPoint;
+        public Transform SkeletonStartPoint;
         
         private ILevelDataProvider _levelDataProvider;
         private ICameraProvider _cameraProvider;
@@ -27,6 +28,7 @@ namespace Thronefall.Infrastructure
             _cameraProvider.SetMainCamera(MainCamera);
             _cameraProvider.SetCinemachineCamera(CinemachineCamera);
             _levelDataProvider.SetStartPoint(StartPoint.position);
+            _levelDataProvider.SetSkeletonStartPoint(SkeletonStartPoint.position);
         }
     }
 }

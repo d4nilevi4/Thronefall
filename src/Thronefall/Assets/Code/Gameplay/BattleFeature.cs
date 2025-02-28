@@ -3,6 +3,7 @@ using Thronefall.Common.Destruct;
 using Thronefall.Gameplay.Cameras;
 using Thronefall.Gameplay.Hero;
 using Thronefall.Gameplay.Input;
+using Thronefall.Gameplay.Navigation;
 using Thronefall.Gameplay.PhysXMovement;
 using Thronefall.Gameplay.Rotation;
 using Thronefall.Infrastructure;
@@ -16,6 +17,7 @@ namespace Thronefall.Gameplay
             Add(systemFactory.Create<CamerasFeature>());
             
             Add(systemFactory.Create<InputFeature>());
+            Add(systemFactory.Create<NavigationFeature>());
             Add(systemFactory.Create<BindViewFeature>());
             
             Add(systemFactory.Create<HeroFeature>());
