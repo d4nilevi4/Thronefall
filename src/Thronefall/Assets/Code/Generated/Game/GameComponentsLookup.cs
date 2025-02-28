@@ -20,21 +20,23 @@ public static class GameComponentsLookup {
     public const int Hero = 9;
     public const int HeroAnimator = 10;
     public const int Id = 11;
-    public const int AffectedByGravity = 12;
-    public const int Direction = 13;
-    public const int MovementAvailable = 14;
-    public const int Moving = 15;
-    public const int PhysXMovable = 16;
-    public const int Rigidbody = 17;
-    public const int SlideOnSurface = 18;
-    public const int Speed = 19;
-    public const int Velocity = 20;
-    public const int RotateTowardsVelocity = 21;
-    public const int RotationSpeed = 22;
-    public const int Transform = 23;
-    public const int WorldPosition = 24;
+    public const int RichNavigation = 12;
+    public const int Seeker = 13;
+    public const int AffectedByGravity = 14;
+    public const int Direction = 15;
+    public const int MovementAvailable = 16;
+    public const int Moving = 17;
+    public const int PhysXMovable = 18;
+    public const int Rigidbody = 19;
+    public const int SlideOnSurface = 20;
+    public const int Speed = 21;
+    public const int Velocity = 22;
+    public const int RotateTowardsVelocity = 23;
+    public const int RotationSpeed = 24;
+    public const int Transform = 25;
+    public const int WorldPosition = 26;
 
-    public const int TotalComponents = 25;
+    public const int TotalComponents = 27;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -49,6 +51,8 @@ public static class GameComponentsLookup {
         "Hero",
         "HeroAnimator",
         "Id",
+        "RichNavigation",
+        "Seeker",
         "AffectedByGravity",
         "Direction",
         "MovementAvailable",
@@ -77,6 +81,8 @@ public static class GameComponentsLookup {
         typeof(Thronefall.Gameplay.Hero.Hero),
         typeof(Thronefall.Gameplay.Hero.HeroAnimatorComponent),
         typeof(Thronefall.Gameplay.Id),
+        typeof(Thronefall.Gameplay.Navigation.RichNavigationComponent),
+        typeof(Thronefall.Gameplay.Navigation.SeekerComponent),
         typeof(Thronefall.Gameplay.PhysXMovement.AffectedByGravity),
         typeof(Thronefall.Gameplay.PhysXMovement.Direction),
         typeof(Thronefall.Gameplay.PhysXMovement.MovementAvailable),
