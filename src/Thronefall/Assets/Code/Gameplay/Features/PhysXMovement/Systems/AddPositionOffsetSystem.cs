@@ -2,24 +2,23 @@
 
 namespace Thronefall.Gameplay.PhysXMovement
 {
-    public class SynchronizePositionSystem : IExecuteSystem
+    public class AddPositionOffsetSystem : IExecuteSystem
     {
         private readonly IGroup<GameEntity> _entities;
 
-        public SynchronizePositionSystem(GameContext game)
+        public AddPositionOffsetSystem(GameContext game)
         {
             _entities = game.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.WorldPosition,
-                    GameMatcher.PhysXMovable,
-                    GameMatcher.Rigidbody));
+                    GameMatcher.PositionOffset));
         }
 
         public void Execute()
         {
             foreach (GameEntity entity in _entities)
             {
-                entity.ReplaceWorldPosition(entity.Rigidbody.position);
+                entity.ReplaceWorldPosition(entity.WorldPosition + entity.PositionOffset);
             }
         }
     }

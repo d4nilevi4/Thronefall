@@ -37,6 +37,7 @@ namespace Thronefall.Gameplay.Hero
                 .With(x => x.isSlideOnSurface = true)
                 .With(x => x.isHero = true)
                 .With(x => x.isMovementAvailable = true)
+                .With(x => x.isAttacker = true)
                 ;
         }
     }

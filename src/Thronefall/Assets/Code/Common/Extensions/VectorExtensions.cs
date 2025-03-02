@@ -75,5 +75,10 @@ namespace Thronefall.Common
             v = tmp;
             return v;
         }
+
+        public static Vector3 FarAway()
+        {
+            return new Vector3(-9999, -9999, -9999);
+        }
     }
 }

@@ -12,4 +12,5 @@ namespace Thronefall.Gameplay.PhysXMovement
     [Game] public class MovementAvailable : IComponent { }
     [Game] public class SlideOnSurface : IComponent { }
     [Game] public class AffectedByGravity : IComponent { }
+    [Game] public class SyncTransformPosition : IComponent { }
 }

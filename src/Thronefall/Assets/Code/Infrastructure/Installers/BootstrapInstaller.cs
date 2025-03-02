@@ -2,6 +2,7 @@ using System;
 using Thronefall.Common;
 using Thronefall.Gameplay;
 using Thronefall.Gameplay.Cameras;
+using Thronefall.Gameplay.Combat;
 using Thronefall.Gameplay.Enemies;
 using Thronefall.Gameplay.GroundDetection;
 using Thronefall.Gameplay.Hero;
@@ -99,6 +100,7 @@ namespace Thronefall.Infrastructure
             Container.Bind<IEntityViewFactory>().To<EntityViewFactory>().AsSingle();
             Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
             Container.Bind<IEnemyFactory>().To<EnemyFactory>().AsSingle();
+            Container.Bind<IWeaponFactory>().To<WeaponFactory>().AsSingle();
         }
 
         private void OnDrawGizmos()
