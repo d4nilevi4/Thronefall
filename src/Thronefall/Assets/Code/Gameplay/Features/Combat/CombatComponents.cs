@@ -9,4 +9,7 @@ namespace Thronefall.Gameplay.Combat
     [Game] public class Attacking : IComponent { }
     [Game] public class Attacker : IComponent { }
     [Game] public class Equipped : IComponent { }
+    [Game] public class MeleeWeapon : IComponent { }
+    [Game] public class RotateWeaponWhileAttacking : IComponent { }
+    [Game] public class AttackRadius : IComponent { public float Value; }
 }

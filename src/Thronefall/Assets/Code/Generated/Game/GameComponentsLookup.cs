@@ -16,42 +16,46 @@ public static class GameComponentsLookup {
     public const int CameraLookPoint = 5;
     public const int Attacker = 6;
     public const int Attacking = 7;
-    public const int Equipped = 8;
-    public const int EquippedWeapon = 9;
-    public const int WeaponAnimator = 10;
-    public const int WeaponOwner = 11;
-    public const int WeaponTypeId = 12;
-    public const int EnemyTypeId = 13;
-    public const int Grounded = 14;
-    public const int GroundHit = 15;
-    public const int SurfaceNormal = 16;
-    public const int Hero = 17;
-    public const int HeroAnimator = 18;
-    public const int Id = 19;
-    public const int Agent = 20;
-    public const int AgentDestination = 21;
-    public const int RichNavigation = 22;
-    public const int Seeker = 23;
-    public const int AffectedByGravity = 24;
-    public const int Direction = 25;
-    public const int MovementAvailable = 26;
-    public const int Moving = 27;
-    public const int PhysXMovable = 28;
-    public const int Rigidbody = 29;
-    public const int SlideOnSurface = 30;
-    public const int Speed = 31;
-    public const int SyncTransformPosition = 32;
-    public const int Velocity = 33;
-    public const int PositionOffset = 34;
-    public const int RotateTowardsVelocity = 35;
-    public const int RotationSpeed = 36;
-    public const int CopyTargetPosition = 37;
-    public const int LerpToTargetPosition = 38;
-    public const int Target = 39;
-    public const int Transform = 40;
-    public const int WorldPosition = 41;
+    public const int AttackRadius = 8;
+    public const int Equipped = 9;
+    public const int EquippedWeapon = 10;
+    public const int MeleeWeapon = 11;
+    public const int RotateWeaponWhileAttacking = 12;
+    public const int WeaponAnimator = 13;
+    public const int WeaponOwner = 14;
+    public const int WeaponTypeId = 15;
+    public const int EnemyTypeId = 16;
+    public const int Grounded = 17;
+    public const int GroundHit = 18;
+    public const int SurfaceNormal = 19;
+    public const int Hero = 20;
+    public const int HeroAnimator = 21;
+    public const int Id = 22;
+    public const int Agent = 23;
+    public const int AgentDestination = 24;
+    public const int RichNavigation = 25;
+    public const int Seeker = 26;
+    public const int AffectedByGravity = 27;
+    public const int Direction = 28;
+    public const int MovementAvailable = 29;
+    public const int Moving = 30;
+    public const int PhysXMovable = 31;
+    public const int Rigidbody = 32;
+    public const int SlideOnSurface = 33;
+    public const int Speed = 34;
+    public const int SyncTransformPosition = 35;
+    public const int Velocity = 36;
+    public const int PositionOffset = 37;
+    public const int RotateTowardsVelocity = 38;
+    public const int RotationSpeed = 39;
+    public const int ChooseClosestTarget = 40;
+    public const int CopyTargetPosition = 41;
+    public const int LerpToTargetPosition = 42;
+    public const int Target = 43;
+    public const int Transform = 44;
+    public const int WorldPosition = 45;
 
-    public const int TotalComponents = 42;
+    public const int TotalComponents = 46;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -62,8 +66,11 @@ public static class GameComponentsLookup {
         "CameraLookPoint",
         "Attacker",
         "Attacking",
+        "AttackRadius",
         "Equipped",
         "EquippedWeapon",
+        "MeleeWeapon",
+        "RotateWeaponWhileAttacking",
         "WeaponAnimator",
         "WeaponOwner",
         "WeaponTypeId",
@@ -91,6 +98,7 @@ public static class GameComponentsLookup {
         "PositionOffset",
         "RotateTowardsVelocity",
         "RotationSpeed",
+        "ChooseClosestTarget",
         "CopyTargetPosition",
         "LerpToTargetPosition",
         "Target",
@@ -107,8 +115,11 @@ public static class GameComponentsLookup {
         typeof(Thronefall.Gameplay.Cameras.CameraLookPoint),
         typeof(Thronefall.Gameplay.Combat.Attacker),
         typeof(Thronefall.Gameplay.Combat.Attacking),
+        typeof(Thronefall.Gameplay.Combat.AttackRadius),
         typeof(Thronefall.Gameplay.Combat.Equipped),
         typeof(Thronefall.Gameplay.Combat.EquippedWeapon),
+        typeof(Thronefall.Gameplay.Combat.MeleeWeapon),
+        typeof(Thronefall.Gameplay.Combat.RotateWeaponWhileAttacking),
         typeof(Thronefall.Gameplay.Combat.WeaponAnimatorComponent),
         typeof(Thronefall.Gameplay.Combat.WeaponOwner),
         typeof(Thronefall.Gameplay.Combat.WeaponTypeIdComponent),
@@ -136,6 +147,7 @@ public static class GameComponentsLookup {
         typeof(Thronefall.Gameplay.PositionOffset),
         typeof(Thronefall.Gameplay.Rotation.RotateTowardsVelocity),
         typeof(Thronefall.Gameplay.Rotation.RotationSpeed),
+        typeof(Thronefall.Gameplay.Targeting.ChooseClosestTarget),
         typeof(Thronefall.Gameplay.Targeting.CopyTargetPosition),
         typeof(Thronefall.Gameplay.Targeting.LerpToTargetPosition),
         typeof(Thronefall.Gameplay.Targeting.Target),

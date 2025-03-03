@@ -7,6 +7,7 @@ namespace Thronefall.Gameplay.Rotation
         public RotationFeature(ISystemFactory systemFactory)
         {
             Add(systemFactory.Create<RotationTowardsVelocitySystem>());
+            Add(systemFactory.Create<RotateWeaponWhileAttackingSystem>());
         }
     }
 }

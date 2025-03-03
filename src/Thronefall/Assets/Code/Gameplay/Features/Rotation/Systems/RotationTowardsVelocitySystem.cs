@@ -27,17 +27,17 @@ namespace Thronefall.Gameplay.Rotation
             {
                 Vector3 flatVelocity = new Vector3(rotator.Velocity.x, 0, rotator.Velocity.z);
 
-                if (flatVelocity.sqrMagnitude > 0.001f)
-                {
-                    Quaternion lookRotation = Quaternion.LookRotation(flatVelocity.normalized);
+                if (flatVelocity.sqrMagnitude < 0.001f) 
+                    continue;
+                
+                Quaternion lookRotation = Quaternion.LookRotation(flatVelocity.normalized);
                     
-                    Quaternion currentRotation = Quaternion.Slerp(
-                        rotator.Rigidbody.rotation,
-                        lookRotation,
-                        _time.DeltaTime * rotator.RotationSpeed);
+                Quaternion currentRotation = Quaternion.Slerp(
+                    rotator.Rigidbody.rotation,
+                    lookRotation,
+                    _time.DeltaTime * rotator.RotationSpeed);
                     
-                    rotator.Rigidbody.MoveRotation(currentRotation);
-                }
+                rotator.Rigidbody.MoveRotation(currentRotation);
             }
         }
     }

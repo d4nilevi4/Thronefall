@@ -27,6 +27,10 @@ namespace Thronefall.Gameplay.Combat
                 .With(x => x.isLerpToTargetPosition = true)
                 .AddSpeed(15f)
                 .With(x => x.isSyncTransformPosition = true)
+                .With(x => x.isMeleeWeapon = true)
+                .AddAttackRadius(1.5f)
+                .AddRotationSpeed(10f)
+                .With(x => x.isRotateWeaponWhileAttacking = true)
                 ;
         }
     }
