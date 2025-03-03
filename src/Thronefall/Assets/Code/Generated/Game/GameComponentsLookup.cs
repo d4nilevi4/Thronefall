@@ -46,11 +46,12 @@ public static class GameComponentsLookup {
     public const int RotateTowardsVelocity = 35;
     public const int RotationSpeed = 36;
     public const int CopyTargetPosition = 37;
-    public const int Target = 38;
-    public const int Transform = 39;
-    public const int WorldPosition = 40;
+    public const int LerpToTargetPosition = 38;
+    public const int Target = 39;
+    public const int Transform = 40;
+    public const int WorldPosition = 41;
 
-    public const int TotalComponents = 41;
+    public const int TotalComponents = 42;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -91,6 +92,7 @@ public static class GameComponentsLookup {
         "RotateTowardsVelocity",
         "RotationSpeed",
         "CopyTargetPosition",
+        "LerpToTargetPosition",
         "Target",
         "Transform",
         "WorldPosition"
@@ -135,6 +137,7 @@ public static class GameComponentsLookup {
         typeof(Thronefall.Gameplay.Rotation.RotateTowardsVelocity),
         typeof(Thronefall.Gameplay.Rotation.RotationSpeed),
         typeof(Thronefall.Gameplay.Targeting.CopyTargetPosition),
+        typeof(Thronefall.Gameplay.Targeting.LerpToTargetPosition),
         typeof(Thronefall.Gameplay.Targeting.Target),
         typeof(Thronefall.Gameplay.TransformComponent),
         typeof(Thronefall.Gameplay.WorldPosition)

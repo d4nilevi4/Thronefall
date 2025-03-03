@@ -19,8 +19,6 @@ namespace Thronefall.Gameplay.PhysXMovement
             
             Add(systemFactory.Create<AdjustVelocitySystem>());
             
-            Add(systemFactory.Create<AddPositionOffsetSystem>());
-            
             Add(systemFactory.Create<SyncTransform2WorldPositionSystem>());
             Add(systemFactory.Create<SyncWorldPosition2TransformSystem>());
             

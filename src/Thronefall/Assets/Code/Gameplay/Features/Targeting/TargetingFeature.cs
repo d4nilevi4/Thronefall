@@ -7,6 +7,7 @@ namespace Thronefall.Gameplay.Targeting
         public TargetingFeature(ISystemFactory systemFactory)
         {
             Add(systemFactory.Create<CopyTargetPositionSystem>());
+            Add(systemFactory.Create<LerpToTargetPositionSystem>());
         }
     }
 }

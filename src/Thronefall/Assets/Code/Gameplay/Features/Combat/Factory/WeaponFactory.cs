@@ -24,7 +24,8 @@ namespace Thronefall.Gameplay.Combat
                 .AddWeaponOwner(owner)
                 .AddTarget(owner)
                 .AddPositionOffset(new Vector3(0f, 2f, 0f))
-                .With(x => x.isCopyTargetPosition = true)
+                .With(x => x.isLerpToTargetPosition = true)
+                .AddSpeed(15f)
                 .With(x => x.isSyncTransformPosition = true)
                 ;
         }

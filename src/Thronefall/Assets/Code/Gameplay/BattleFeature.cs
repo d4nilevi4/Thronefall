@@ -16,19 +16,19 @@ namespace Thronefall.Gameplay
     {
         public BattleFeature(ISystemFactory systemFactory)
         {
-            Add(systemFactory.Create<CamerasFeature>());
-            
             Add(systemFactory.Create<InputFeature>());
             Add(systemFactory.Create<NavigationFeature>());
             Add(systemFactory.Create<BindViewFeature>());
-            
+
             Add(systemFactory.Create<HeroFeature>());
-            
+
             Add(systemFactory.Create<TargetingFeature>());
             Add(systemFactory.Create<CombatFeature>());
-            
+
             Add(systemFactory.Create<PhysXMovementFeature>());
             Add(systemFactory.Create<RotationFeature>());
+
+            Add(systemFactory.Create<CamerasFeature>());
             
             Add(systemFactory.Create<ProcessDestructedFeature>());
         }

@@ -1,4 +1,5 @@
 ﻿using Entitas;
+using UnityEngine;
 
 namespace Thronefall.Gameplay.PhysXMovement
 {
@@ -19,7 +20,11 @@ namespace Thronefall.Gameplay.PhysXMovement
         {
             foreach (GameEntity entity in _entities)
             {
-                entity.Transform.position = entity.WorldPosition;
+                Vector3 position = entity.hasPositionOffset
+                    ? entity.WorldPosition + entity.PositionOffset
+                    : entity.WorldPosition;
+
+                entity.Transform.position = position;
             }
         }
     }

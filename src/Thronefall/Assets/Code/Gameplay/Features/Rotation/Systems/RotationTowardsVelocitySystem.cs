@@ -9,7 +9,7 @@ namespace Thronefall.Gameplay.Rotation
         private readonly IGroup<GameEntity> _rotators;
 
         public RotationTowardsVelocitySystem(
-            GameContext game, 
+            GameContext game,
             ITimeService time)
         {
             _time = time;
@@ -31,10 +31,12 @@ namespace Thronefall.Gameplay.Rotation
                 {
                     Quaternion lookRotation = Quaternion.LookRotation(flatVelocity.normalized);
                     
-                    rotator.Rigidbody.rotation = Quaternion.Slerp(
-                        rotator.Rigidbody.rotation, 
-                        lookRotation, 
+                    Quaternion currentRotation = Quaternion.Slerp(
+                        rotator.Rigidbody.rotation,
+                        lookRotation,
                         _time.DeltaTime * rotator.RotationSpeed);
+                    
+                    rotator.Rigidbody.MoveRotation(currentRotation);
                 }
             }
         }

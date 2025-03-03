@@ -7,6 +7,7 @@ namespace Thronefall.Gameplay
         private bool _paused;
 
         public float DeltaTime => !_paused ? UnityEngine.Time.deltaTime : 0;
+        public float FixedDeltaTime => !_paused ? UnityEngine.Time.fixedDeltaTime : 0;
 
         public DateTime UtcNow => DateTime.UtcNow;
 
