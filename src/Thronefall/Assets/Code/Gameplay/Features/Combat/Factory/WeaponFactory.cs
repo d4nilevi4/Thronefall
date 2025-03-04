@@ -21,6 +21,7 @@ namespace Thronefall.Gameplay.Combat
                 .AddWorldPosition(VectorExtensions.FarAway())
                 .AddViewPath("Gameplay/Weapons/Axe/Axe_Small")
                 .AddWeaponTypeId(typeId)
+                .With(x => x.isWeapon = true)
                 .AddWeaponOwner(owner)
                 .AddTarget(owner)
                 .AddPositionOffset(new Vector3(0f, 2f, 0f))
@@ -31,10 +32,7 @@ namespace Thronefall.Gameplay.Combat
                 .AddAttackRadius(1.5f)
                 .AddRotationSpeed(10f)
                 .With(x => x.isRotateWeaponWhileAttacking = true)
-                .AddDamage(new Damage()
-                {
-                    Value = 1,
-                })
+                .AddDamage(new Damage() { Value = 1, })
                 .AddHitLayerMask(CollisionLayer.Enemy.AsMask())
                 ;
         }

@@ -13,6 +13,7 @@ namespace Thronefall.Gameplay.Combat
             Add(systemFactory.Create<WeaponDisableAttackReactiveSystem>());
             
             Add(systemFactory.Create<MeleeWeaponAttackSystem>());
+            Add(systemFactory.Create<ProcessDamageWeaponHitSystem>());
             
             AddGizmoFeatures(systemFactory);
         }

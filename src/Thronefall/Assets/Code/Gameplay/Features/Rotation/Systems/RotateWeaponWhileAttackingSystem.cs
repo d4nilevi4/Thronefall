@@ -15,7 +15,7 @@ namespace Thronefall.Gameplay.Rotation
             _time = time;
             _weapons = game.GetGroup(GameMatcher
                 .AllOf(
-                    GameMatcher.WeaponTypeId,
+                    GameMatcher.Weapon,
                     GameMatcher.Transform,
                     GameMatcher.RotateWeaponWhileAttacking,
                     GameMatcher.RotationSpeed));

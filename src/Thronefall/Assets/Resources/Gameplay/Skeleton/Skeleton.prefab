@@ -1615,6 +1615,7 @@ GameObject:
   - component: {fileID: 8884724452196683859}
   - component: {fileID: 2431157894935928447}
   - component: {fileID: 2041518076093238670}
+  - component: {fileID: 2873234909823204221}
   m_Layer: 0
   m_Name: '[Registrars]'
   m_TagString: Untagged
@@ -1706,6 +1707,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntityView: {fileID: 0}
   RichNavigation: {fileID: 3024628931361970747}
+--- !u!114 &2873234909823204221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7776136161734209907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4655f2115d4c4f1f8d83b22ae0d592b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: 0}
+  EnemyAnimator: {fileID: 892030962386940155}
 --- !u!1 &8811486320345496957
 GameObject:
   m_ObjectHideFlags: 0
@@ -1716,6 +1731,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7171105168980605190}
   - component: {fileID: 863002075820763143}
+  - component: {fileID: 892030962386940155}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Untagged
@@ -1765,3 +1781,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &892030962386940155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8811486320345496957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0f43e8a6b9f466d82078409141695ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _takeDamageMat: {fileID: 2100000, guid: 82a865bce2abe7b4a9251333b501de0b, type: 2}
+  _renderer: {fileID: 9150716441720790167}

@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Thronefall.Gameplay.LifeTime.CurrentHp currentHp { get { return (Thronefall.Gameplay.LifeTime.CurrentHp)GetComponent(GameComponentsLookup.CurrentHp); } }
+    public Thronefall.Gameplay.Lifetime.CurrentHp currentHp { get { return (Thronefall.Gameplay.Lifetime.CurrentHp)GetComponent(GameComponentsLookup.CurrentHp); } }
     public float CurrentHp { get { return currentHp.Value; } }
     public bool hasCurrentHp { get { return HasComponent(GameComponentsLookup.CurrentHp); } }
 
     public GameEntity AddCurrentHp(float newValue) {
         var index = GameComponentsLookup.CurrentHp;
-        var component = (Thronefall.Gameplay.LifeTime.CurrentHp)CreateComponent(index, typeof(Thronefall.Gameplay.LifeTime.CurrentHp));
+        var component = (Thronefall.Gameplay.Lifetime.CurrentHp)CreateComponent(index, typeof(Thronefall.Gameplay.Lifetime.CurrentHp));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceCurrentHp(float newValue) {
         var index = GameComponentsLookup.CurrentHp;
-        var component = (Thronefall.Gameplay.LifeTime.CurrentHp)CreateComponent(index, typeof(Thronefall.Gameplay.LifeTime.CurrentHp));
+        var component = (Thronefall.Gameplay.Lifetime.CurrentHp)CreateComponent(index, typeof(Thronefall.Gameplay.Lifetime.CurrentHp));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Thronefall.Gameplay.LifeTime.MaxHp maxHp { get { return (Thronefall.Gameplay.LifeTime.MaxHp)GetComponent(GameComponentsLookup.MaxHp); } }
+    public Thronefall.Gameplay.Lifetime.MaxHp maxHp { get { return (Thronefall.Gameplay.Lifetime.MaxHp)GetComponent(GameComponentsLookup.MaxHp); } }
     public float MaxHp { get { return maxHp.Value; } }
     public bool hasMaxHp { get { return HasComponent(GameComponentsLookup.MaxHp); } }
 
     public GameEntity AddMaxHp(float newValue) {
         var index = GameComponentsLookup.MaxHp;
-        var component = (Thronefall.Gameplay.LifeTime.MaxHp)CreateComponent(index, typeof(Thronefall.Gameplay.LifeTime.MaxHp));
+        var component = (Thronefall.Gameplay.Lifetime.MaxHp)CreateComponent(index, typeof(Thronefall.Gameplay.Lifetime.MaxHp));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceMaxHp(float newValue) {
         var index = GameComponentsLookup.MaxHp;
-        var component = (Thronefall.Gameplay.LifeTime.MaxHp)CreateComponent(index, typeof(Thronefall.Gameplay.LifeTime.MaxHp));
+        var component = (Thronefall.Gameplay.Lifetime.MaxHp)CreateComponent(index, typeof(Thronefall.Gameplay.Lifetime.MaxHp));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

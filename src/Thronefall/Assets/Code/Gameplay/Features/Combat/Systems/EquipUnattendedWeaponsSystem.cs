@@ -14,7 +14,7 @@ namespace Thronefall.Gameplay.Combat
             _game = game;
             _weapons = game.GetGroup(GameMatcher
                 .AllOf(
-                    GameMatcher.WeaponTypeId,
+                    GameMatcher.Weapon,
                     GameMatcher.WeaponOwner)
                 .NoneOf(
                     GameMatcher.Equipped));

@@ -18,7 +18,7 @@ namespace Thronefall.Gameplay.Targeting
 
             _enemies = contextParameter.GetGroup(GameMatcher
                 .AllOf(
-                    GameMatcher.EnemyTypeId,
+                    GameMatcher.Enemy,
                     GameMatcher.Id,
                     GameMatcher.WorldPosition));
         }

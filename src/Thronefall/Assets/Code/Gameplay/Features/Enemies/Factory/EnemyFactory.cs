@@ -31,7 +31,10 @@ namespace Thronefall.Gameplay.Enemies
                 .With(x => x.isMovementAvailable = true)
                 .With(x => x.isAgent = true)
                 .AddEnemyTypeId(typeId)
+                .With(x => x.isEnemy = true)
                 .AddAgentDestination(at)
+                .AddMaxHp(20f)
+                .AddCurrentHp(20f)
                 ;
         }
     }

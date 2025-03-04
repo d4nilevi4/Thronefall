@@ -2,9 +2,11 @@
 using Thronefall.Common.Destruct;
 using Thronefall.Gameplay.Cameras;
 using Thronefall.Gameplay.Combat;
+using Thronefall.Gameplay.Enemies;
 using Thronefall.Gameplay.Hero;
 using Thronefall.Gameplay.HitDetection;
 using Thronefall.Gameplay.Input;
+using Thronefall.Gameplay.Lifetime;
 using Thronefall.Gameplay.Navigation;
 using Thronefall.Gameplay.PhysXMovement;
 using Thronefall.Gameplay.Rotation;
@@ -22,7 +24,9 @@ namespace Thronefall.Gameplay
             Add(systemFactory.Create<BindViewFeature>());
 
             Add(systemFactory.Create<HeroFeature>());
-
+            Add(systemFactory.Create<EnemiesFeature>());
+            Add(systemFactory.Create<LifetimeFeature>());
+            
             Add(systemFactory.Create<TargetingFeature>());
             Add(systemFactory.Create<HitDetectionFeature>());
             Add(systemFactory.Create<CombatFeature>());
