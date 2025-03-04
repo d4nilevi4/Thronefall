@@ -1,6 +1,8 @@
+using Thronefall.Common;
+
 namespace Thronefall.Infrastructure
 {
-    public sealed class BindViewFeature : Feature
+    public sealed class BindViewFeature : CustomFeature
     {
         public BindViewFeature(ISystemFactory systemFactory)
         {

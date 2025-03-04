@@ -2,7 +2,7 @@
 
 namespace Thronefall.Common.Destruct
 {
-    public class ProcessDestructedFeature : Feature
+    public class ProcessDestructedFeature : CustomFeature
     {
         public ProcessDestructedFeature(ISystemFactory systems)
         {

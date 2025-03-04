@@ -1,13 +1,11 @@
-﻿using System.Collections.Generic;
-using Entitas;
+﻿using Entitas;
 using Thronefall.Common;
-using Thronefall.Common.Entity;
 using Thronefall.Common.EntityIndices;
 using UnityEngine;
 
 namespace Thronefall.Gameplay.HitDetection
 {
-    public class WeaponSphereBladeHitDetectionSystem : IExecuteSystem
+    public class WeaponSphereBladeHitDetectionSystem : IFixedExecuteSystem
     {
         private readonly GameContext _game;
         private readonly ICollisionRegistry _collisionRegistry;
@@ -32,7 +30,7 @@ namespace Thronefall.Gameplay.HitDetection
                     GameMatcher.HitLayerMask));
         }
 
-        public void Execute()
+        public void FixedExecute()
         {
             foreach (GameEntity weapon in _weapons)
             {

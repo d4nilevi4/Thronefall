@@ -1,8 +1,9 @@
-﻿using Thronefall.Infrastructure;
+﻿using Thronefall.Common;
+using Thronefall.Infrastructure;
 
 namespace Thronefall.Gameplay.Input
 {
-    public sealed class InputFeature : Feature
+    public sealed class InputFeature : CustomFeature
     {
         public InputFeature(ISystemFactory systemFactory)
         {

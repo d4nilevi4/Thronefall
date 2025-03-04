@@ -1,9 +1,10 @@
 using System.Collections.Generic;
 using Entitas;
+using Thronefall.Common;
 
 namespace Thronefall.Gameplay.HitDetection
 {
-    public class DestroyNotVerifiedWeaponHitsSystem : ICleanupSystem
+    public class DestroyNotVerifiedWeaponHitsSystem : IFixedExecuteSystem
     {
         private readonly IGroup<GameEntity> _weaponHits;
         private readonly List<GameEntity> _buffer = new(64);
@@ -15,7 +16,7 @@ namespace Thronefall.Gameplay.HitDetection
                 .NoneOf(GameMatcher.VerifiedWeaponHit));
         }
 
-        public void Cleanup()
+        public void FixedExecute()
         {
             foreach (GameEntity weaponHit in _weaponHits.GetEntities(_buffer))
             {

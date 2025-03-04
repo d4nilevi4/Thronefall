@@ -1,9 +1,10 @@
 using Thronefall.Common;
 using Thronefall.Gameplay;
+using Zenject;
 
 namespace Thronefall.Infrastructure
 {
-    public class BattleLoopState : EndOfFrameExitState
+    public class BattleLoopState : EndOfFrameExitState, IFixedUpdatableState
     {
         private readonly ISystemFactory _systems;
         private BattleFeature _battleFeature;
@@ -31,6 +32,11 @@ namespace Thronefall.Infrastructure
         {
             _battleFeature.Execute();
             _battleFeature.Cleanup();
+        }
+
+        public void FixedUpdate()
+        {
+            _battleFeature.FixedExecute();
         }
 
         protected override void ExitOnEndOfFrame()

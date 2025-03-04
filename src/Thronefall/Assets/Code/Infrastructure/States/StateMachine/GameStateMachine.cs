@@ -4,24 +4,27 @@ using Zenject;
 
 namespace Thronefall.Infrastructure
 {
-    public class GameStateMachine : IGameStateMachine, ITickable
+    public class GameStateMachine : IGameStateMachine, ITickable, IFixedTickable
     {
         private readonly IStateFactory _stateFactory;
-        private readonly ITimeService _timeService;
         private IExitableState _activeState;
 
         public GameStateMachine(
-            IStateFactory stateFactory,
-            ITimeService timeService)
+            IStateFactory stateFactory)
         {
             _stateFactory = stateFactory;
-            _timeService = timeService;
         }
 
         public void Tick()
         {
             if (_activeState is IUpdatableState updatableState)
-                updatableState.Update(_timeService.DeltaTime);
+                updatableState.Update();
+        }
+
+        public void FixedTick()
+        {
+            if (_activeState is IFixedUpdatableState fixedUpdatableState)
+                fixedUpdatableState.FixedUpdate();
         }
 
         public async UniTask Enter<TState>() where TState : class, IState

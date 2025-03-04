@@ -1,8 +1,9 @@
 using Entitas;
+using Thronefall.Common;
 
 namespace Thronefall.Gameplay.HitDetection
 {
-    public class ResetVerificationWeaponHitSystem : IExecuteSystem
+    public class ResetVerificationWeaponHitSystem : IFixedExecuteSystem
     {
         private readonly IGroup<GameEntity> _weaponHits;
 
@@ -13,7 +14,7 @@ namespace Thronefall.Gameplay.HitDetection
                     GameMatcher.WeaponHit));
         }
 
-        public void Execute()
+        public void FixedExecute()
         {
             foreach (GameEntity weaponHit in _weaponHits)
             {

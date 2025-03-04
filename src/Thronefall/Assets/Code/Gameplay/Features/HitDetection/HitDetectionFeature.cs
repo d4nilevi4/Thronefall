@@ -3,7 +3,7 @@ using Thronefall.Infrastructure;
 
 namespace Thronefall.Gameplay.HitDetection
 {
-    public sealed class HitDetectionFeature : DrawGizmoFeature
+    public sealed class HitDetectionFeature : CustomFeature
     {
         public HitDetectionFeature(ISystemFactory systemFactory)
         {

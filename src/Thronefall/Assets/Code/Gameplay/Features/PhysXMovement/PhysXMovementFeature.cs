@@ -4,7 +4,7 @@ using Thronefall.Infrastructure;
 
 namespace Thronefall.Gameplay.PhysXMovement
 {
-    public sealed class PhysXMovementFeature : DrawGizmoFeature
+    public sealed class PhysXMovementFeature : CustomFeature
     {
         public PhysXMovementFeature(ISystemFactory systemFactory)
         {

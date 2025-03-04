@@ -1,8 +1,9 @@
+using Thronefall.Common;
 using Thronefall.Infrastructure;
 
 namespace Thronefall.Gameplay.Hero
 {
-    public sealed class HeroFeature : Feature
+    public sealed class HeroFeature : CustomFeature
     {
         public HeroFeature(ISystemFactory systemFactory)
         {

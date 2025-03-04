@@ -1,8 +1,9 @@
-﻿using Thronefall.Infrastructure;
+﻿using Thronefall.Common;
+using Thronefall.Infrastructure;
 
 namespace Thronefall.Gameplay.Targeting
 {
-    public sealed class TargetingFeature : Feature
+    public sealed class TargetingFeature : CustomFeature
     {
         public TargetingFeature(ISystemFactory systemFactory)
         {

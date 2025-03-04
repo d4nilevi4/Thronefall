@@ -1,8 +1,9 @@
-﻿using Thronefall.Infrastructure;
+﻿using Thronefall.Common;
+using Thronefall.Infrastructure;
 
 namespace Thronefall.Gameplay.Navigation
 {
-    public sealed class NavigationFeature : Feature
+    public sealed class NavigationFeature : CustomFeature
     {
         public NavigationFeature(ISystemFactory systemFactory)
         {

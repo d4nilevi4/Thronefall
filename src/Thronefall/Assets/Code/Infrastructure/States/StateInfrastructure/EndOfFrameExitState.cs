@@ -21,7 +21,7 @@ namespace Thronefall.Infrastructure
             ExitOnEndOfFrame();
         }
 
-        void IUpdatableState.Update(float dt)
+        void IUpdatableState.Update()
         {
             OnUpdate();
             _taskCompletionSource?.TrySetResult();

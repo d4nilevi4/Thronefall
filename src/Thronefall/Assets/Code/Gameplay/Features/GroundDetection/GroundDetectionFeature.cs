@@ -3,7 +3,7 @@ using Thronefall.Infrastructure;
 
 namespace Thronefall.Gameplay.GroundDetection
 {
-    public sealed class GroundDetectionFeature : DrawGizmoFeature
+    public sealed class GroundDetectionFeature : CustomFeature
     {
         public GroundDetectionFeature(ISystemFactory systemFactory)
         {

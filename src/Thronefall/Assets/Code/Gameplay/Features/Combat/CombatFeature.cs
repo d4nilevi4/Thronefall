@@ -3,7 +3,7 @@ using Thronefall.Infrastructure;
 
 namespace Thronefall.Gameplay.Combat
 {
-    public sealed class CombatFeature : DrawGizmoFeature
+    public sealed class CombatFeature : CustomFeature
     {
         public CombatFeature(ISystemFactory systemFactory)
         {
