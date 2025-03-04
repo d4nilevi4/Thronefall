@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 36811042572090046}
   - component: {fileID: 8414042341232007052}
   - component: {fileID: 3147480613307389405}
+  - component: {fileID: 254112526205046197}
   m_Layer: 0
   m_Name: '[Registrars]'
   m_TagString: Untagged
@@ -75,6 +76,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntityView: {fileID: 0}
   Transform: {fileID: 532285542570946502}
+--- !u!114 &254112526205046197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081298575281804587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f82bd2f37f94eb8bb628f44910ad5cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: 0}
+  WeaponBladeTransform: {fileID: 5631135522872903480}
+  Radius: 0.2
+--- !u!1 &3232756473016067703
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5631135522872903480}
+  m_Layer: 0
+  m_Name: WeaponSphereBlade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5631135522872903480
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3232756473016067703}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.3854, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2295332493942992471}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4307156784941984655
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,7 +235,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5631135522872903480}
   m_Father: {fileID: 532285542570946502}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6373665700584654819

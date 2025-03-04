@@ -1,11 +1,13 @@
 using System;
 using Thronefall.Common;
+using Thronefall.Common.EntityIndices;
 using Thronefall.Gameplay;
 using Thronefall.Gameplay.Cameras;
 using Thronefall.Gameplay.Combat;
 using Thronefall.Gameplay.Enemies;
 using Thronefall.Gameplay.GroundDetection;
 using Thronefall.Gameplay.Hero;
+using Thronefall.Gameplay.HitDetection;
 using Thronefall.Gameplay.Input;
 using Thronefall.Gameplay.Levels;
 using Thronefall.Gameplay.StaticData;
@@ -30,6 +32,7 @@ namespace Thronefall.Infrastructure
             BindGameStates();
             BindGameplayServices();
             BindGameplayFactories();
+            BindEntityIndices();
         }
 
         private void BindStateMachine()
@@ -101,8 +104,14 @@ namespace Thronefall.Infrastructure
             Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
             Container.Bind<IEnemyFactory>().To<EnemyFactory>().AsSingle();
             Container.Bind<IWeaponFactory>().To<WeaponFactory>().AsSingle();
+            Container.Bind<IHitFactory>().To<HitFactory>().AsSingle();
         }
 
+        private void BindEntityIndices()
+        {
+            Container.BindInterfacesAndSelfTo<GameEntityIndices>().AsSingle();
+        }
+        
         private void OnDrawGizmos()
         {
             EventDrawGizmo?.Invoke();

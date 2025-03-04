@@ -1,4 +1,5 @@
 ﻿using Entitas;
+using UnityEngine;
 
 namespace Thronefall.Gameplay.Combat
 {
@@ -12,4 +13,8 @@ namespace Thronefall.Gameplay.Combat
     [Game] public class MeleeWeapon : IComponent { }
     [Game] public class RotateWeaponWhileAttacking : IComponent { }
     [Game] public class AttackRadius : IComponent { public float Value; }
+    [Game] public class WeaponSphereBladeTransform : IComponent { public Transform Value; }
+    [Game] public class WeaponSphereBladeRadius : IComponent { public float Value; }
+    [Game] public class DamageComponent : IComponent { public Damage Value; }
+    [Game] public class Causer : IComponent { public int Value; }
 }

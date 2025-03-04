@@ -3,6 +3,8 @@
     public enum CollisionLayer
     {
         Ground = 8,
+        Enemy = 9,
+        Hero = 10,
     }
     
     public static class CollisionExtensions

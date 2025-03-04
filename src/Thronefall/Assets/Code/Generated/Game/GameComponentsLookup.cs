@@ -17,45 +17,54 @@ public static class GameComponentsLookup {
     public const int Attacker = 6;
     public const int Attacking = 7;
     public const int AttackRadius = 8;
-    public const int Equipped = 9;
-    public const int EquippedWeapon = 10;
-    public const int MeleeWeapon = 11;
-    public const int RotateWeaponWhileAttacking = 12;
-    public const int WeaponAnimator = 13;
-    public const int WeaponOwner = 14;
-    public const int WeaponTypeId = 15;
-    public const int EnemyTypeId = 16;
-    public const int Grounded = 17;
-    public const int GroundHit = 18;
-    public const int SurfaceNormal = 19;
-    public const int Hero = 20;
-    public const int HeroAnimator = 21;
-    public const int Id = 22;
-    public const int Agent = 23;
-    public const int AgentDestination = 24;
-    public const int RichNavigation = 25;
-    public const int Seeker = 26;
-    public const int AffectedByGravity = 27;
-    public const int Direction = 28;
-    public const int MovementAvailable = 29;
-    public const int Moving = 30;
-    public const int PhysXMovable = 31;
-    public const int Rigidbody = 32;
-    public const int SlideOnSurface = 33;
-    public const int Speed = 34;
-    public const int SyncTransformPosition = 35;
-    public const int Velocity = 36;
-    public const int PositionOffset = 37;
-    public const int RotateTowardsVelocity = 38;
-    public const int RotationSpeed = 39;
-    public const int ChooseClosestTarget = 40;
-    public const int CopyTargetPosition = 41;
-    public const int LerpToTargetPosition = 42;
-    public const int Target = 43;
-    public const int Transform = 44;
-    public const int WorldPosition = 45;
+    public const int Causer = 9;
+    public const int Damage = 10;
+    public const int Equipped = 11;
+    public const int EquippedWeapon = 12;
+    public const int MeleeWeapon = 13;
+    public const int RotateWeaponWhileAttacking = 14;
+    public const int WeaponAnimator = 15;
+    public const int WeaponOwner = 16;
+    public const int WeaponSphereBladeRadius = 17;
+    public const int WeaponSphereBladeTransform = 18;
+    public const int WeaponTypeId = 19;
+    public const int EnemyTypeId = 20;
+    public const int Grounded = 21;
+    public const int GroundHit = 22;
+    public const int SurfaceNormal = 23;
+    public const int Hero = 24;
+    public const int HeroAnimator = 25;
+    public const int HitLayerMask = 26;
+    public const int VerifiedWeaponHit = 27;
+    public const int WeaponHit = 28;
+    public const int Id = 29;
+    public const int CurrentHp = 30;
+    public const int MaxHp = 31;
+    public const int Agent = 32;
+    public const int AgentDestination = 33;
+    public const int RichNavigation = 34;
+    public const int Seeker = 35;
+    public const int AffectedByGravity = 36;
+    public const int Direction = 37;
+    public const int MovementAvailable = 38;
+    public const int Moving = 39;
+    public const int PhysXMovable = 40;
+    public const int Rigidbody = 41;
+    public const int SlideOnSurface = 42;
+    public const int Speed = 43;
+    public const int SyncTransformPosition = 44;
+    public const int Velocity = 45;
+    public const int PositionOffset = 46;
+    public const int RotateTowardsVelocity = 47;
+    public const int RotationSpeed = 48;
+    public const int ChooseClosestTarget = 49;
+    public const int CopyTargetPosition = 50;
+    public const int LerpToTargetPosition = 51;
+    public const int Target = 52;
+    public const int Transform = 53;
+    public const int WorldPosition = 54;
 
-    public const int TotalComponents = 46;
+    public const int TotalComponents = 55;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -67,12 +76,16 @@ public static class GameComponentsLookup {
         "Attacker",
         "Attacking",
         "AttackRadius",
+        "Causer",
+        "Damage",
         "Equipped",
         "EquippedWeapon",
         "MeleeWeapon",
         "RotateWeaponWhileAttacking",
         "WeaponAnimator",
         "WeaponOwner",
+        "WeaponSphereBladeRadius",
+        "WeaponSphereBladeTransform",
         "WeaponTypeId",
         "EnemyTypeId",
         "Grounded",
@@ -80,7 +93,12 @@ public static class GameComponentsLookup {
         "SurfaceNormal",
         "Hero",
         "HeroAnimator",
+        "HitLayerMask",
+        "VerifiedWeaponHit",
+        "WeaponHit",
         "Id",
+        "CurrentHp",
+        "MaxHp",
         "Agent",
         "AgentDestination",
         "RichNavigation",
@@ -116,12 +134,16 @@ public static class GameComponentsLookup {
         typeof(Thronefall.Gameplay.Combat.Attacker),
         typeof(Thronefall.Gameplay.Combat.Attacking),
         typeof(Thronefall.Gameplay.Combat.AttackRadius),
+        typeof(Thronefall.Gameplay.Combat.Causer),
+        typeof(Thronefall.Gameplay.Combat.DamageComponent),
         typeof(Thronefall.Gameplay.Combat.Equipped),
         typeof(Thronefall.Gameplay.Combat.EquippedWeapon),
         typeof(Thronefall.Gameplay.Combat.MeleeWeapon),
         typeof(Thronefall.Gameplay.Combat.RotateWeaponWhileAttacking),
         typeof(Thronefall.Gameplay.Combat.WeaponAnimatorComponent),
         typeof(Thronefall.Gameplay.Combat.WeaponOwner),
+        typeof(Thronefall.Gameplay.Combat.WeaponSphereBladeRadius),
+        typeof(Thronefall.Gameplay.Combat.WeaponSphereBladeTransform),
         typeof(Thronefall.Gameplay.Combat.WeaponTypeIdComponent),
         typeof(Thronefall.Gameplay.Enemies.EnemyTypeIdComponent),
         typeof(Thronefall.Gameplay.GroundDetection.Grounded),
@@ -129,7 +151,12 @@ public static class GameComponentsLookup {
         typeof(Thronefall.Gameplay.GroundDetection.SurfaceNormal),
         typeof(Thronefall.Gameplay.Hero.Hero),
         typeof(Thronefall.Gameplay.Hero.HeroAnimatorComponent),
+        typeof(Thronefall.Gameplay.HitDetection.HitLayerMask),
+        typeof(Thronefall.Gameplay.HitDetection.VerifiedWeaponHit),
+        typeof(Thronefall.Gameplay.HitDetection.WeaponHit),
         typeof(Thronefall.Gameplay.Id),
+        typeof(Thronefall.Gameplay.LifeTime.CurrentHp),
+        typeof(Thronefall.Gameplay.LifeTime.MaxHp),
         typeof(Thronefall.Gameplay.Navigation.Agent),
         typeof(Thronefall.Gameplay.Navigation.AgentDestination),
         typeof(Thronefall.Gameplay.Navigation.RichNavigationComponent),

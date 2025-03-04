@@ -31,6 +31,11 @@ namespace Thronefall.Gameplay.Combat
                 .AddAttackRadius(1.5f)
                 .AddRotationSpeed(10f)
                 .With(x => x.isRotateWeaponWhileAttacking = true)
+                .AddDamage(new Damage()
+                {
+                    Value = 1,
+                })
+                .AddHitLayerMask(CollisionLayer.Enemy.AsMask())
                 ;
         }
     }
