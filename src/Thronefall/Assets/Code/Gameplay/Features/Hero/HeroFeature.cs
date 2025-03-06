@@ -9,6 +9,11 @@ namespace Thronefall.Gameplay.Hero
         {
             Add(systemFactory.Create<SetHeroDirectionByInputSystem>());
             Add(systemFactory.Create<AnimateHeroMovementSystem>());
+            
+            Add(systemFactory.Create<HeroDeathSystem>());
+            Add(systemFactory.Create<ProcessHeroWeaponDeathSystem>());
+            
+            Add(systemFactory.Create<FinalizeHeroDeathProcessingSystem>());
         }
     }
 }
