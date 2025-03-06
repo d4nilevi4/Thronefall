@@ -7,7 +7,9 @@ namespace Thronefall.Gameplay.Navigation
     {
         public NavigationFeature(ISystemFactory systemFactory)
         {
-            Add(systemFactory.Create<SetAgentDestinationSystem>());
+            Add(systemFactory.Create<SetAgentDestinationByTargetPositionSystem>());
+            
+            Add(systemFactory.Create<ApplyAgentDestinationSystem>());
             Add(systemFactory.Create<SetAgentDirectionByNavigationSystem>());
         }
     }

@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Thronefall.Gameplay.Navigation
 {
-    public class SetAgentDestinationSystem : IExecuteSystem
+    public class ApplyAgentDestinationSystem : IExecuteSystem
     {
         private readonly IGroup<GameEntity> _agents;
 
-        public SetAgentDestinationSystem(GameContext game)
+        public ApplyAgentDestinationSystem(GameContext game)
         {
             _agents = game.GetGroup(GameMatcher
                 .AllOf(
