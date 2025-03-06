@@ -12,7 +12,7 @@ namespace Thronefall.Gameplay.Targeting
         {
             _heroes = contextParameter.GetGroup(GameMatcher
                 .AllOf(
-                    GameMatcher.ChooseClosestTarget,
+                    GameMatcher.ChooseClosestEnemyTarget,
                     GameMatcher.Hero,
                     GameMatcher.WorldPosition));
 

@@ -29,6 +29,8 @@ namespace Thronefall.Gameplay.Enemies
                 .With(x => x.isAffectedByGravity = true)
                 .With(x => x.isSlideOnSurface = true)
                 .With(x => x.isMovementAvailable = true)
+                .With(x => x.isAttacker = true)
+                .With(x => x.isChooseHeroTarget = true)
                 .With(x => x.isAgent = true)
                 .AddEnemyTypeId(typeId)
                 .With(x => x.isEnemy = true)

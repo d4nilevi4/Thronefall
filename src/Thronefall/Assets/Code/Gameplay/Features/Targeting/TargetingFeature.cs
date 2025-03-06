@@ -9,7 +9,9 @@ namespace Thronefall.Gameplay.Targeting
         {
             Add(systemFactory.Create<CopyTargetPositionSystem>());
             Add(systemFactory.Create<LerpToTargetPositionSystem>());
+            
             Add(systemFactory.Create<ChooseClosestEnemyTargetSystem>());
+            Add(systemFactory.Create<ChooseHeroTargetSystem>());
         }
     }
 }

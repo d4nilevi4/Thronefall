@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherChooseClosestTarget;
+    static Entitas.IMatcher<GameEntity> _matcherChooseHeroTarget;
 
-    public static Entitas.IMatcher<GameEntity> ChooseClosestTarget {
+    public static Entitas.IMatcher<GameEntity> ChooseHeroTarget {
         get {
-            if (_matcherChooseClosestTarget == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.ChooseClosestTarget);
+            if (_matcherChooseHeroTarget == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.ChooseHeroTarget);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherChooseClosestTarget = matcher;
+                _matcherChooseHeroTarget = matcher;
             }
 
-            return _matcherChooseClosestTarget;
+            return _matcherChooseHeroTarget;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Thronefall.Gameplay.Targeting.ChooseClosestTarget chooseClosestTargetComponent = new Thronefall.Gameplay.Targeting.ChooseClosestTarget();
+    static readonly Thronefall.Gameplay.Targeting.ChooseHeroTarget chooseHeroTargetComponent = new Thronefall.Gameplay.Targeting.ChooseHeroTarget();
 
-    public bool isChooseClosestTarget {
-        get { return HasComponent(GameComponentsLookup.ChooseClosestTarget); }
+    public bool isChooseHeroTarget {
+        get { return HasComponent(GameComponentsLookup.ChooseHeroTarget); }
         set {
-            if (value != isChooseClosestTarget) {
-                var index = GameComponentsLookup.ChooseClosestTarget;
+            if (value != isChooseHeroTarget) {
+                var index = GameComponentsLookup.ChooseHeroTarget;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : chooseClosestTargetComponent;
+                            : chooseHeroTargetComponent;
 
                     AddComponent(index, component);
                 } else {

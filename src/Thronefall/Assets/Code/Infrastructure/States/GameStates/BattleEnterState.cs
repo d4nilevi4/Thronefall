@@ -1,4 +1,4 @@
-using Thronefall.Gameplay.Cameras;
+using Thronefall.Common;
 using Thronefall.Gameplay.Combat;
 using Thronefall.Gameplay.Enemies;
 using Thronefall.Gameplay.Hero;
@@ -32,15 +32,21 @@ namespace Thronefall.Infrastructure
         {
             PlaceHero();
 
-            _enemyFactory.CreateEnemy(EnemyTypeId.Skeleton, _levelDataProvider.SkeletonStartPoint);
+            PlaceEnemy();
             
             _stateMachine.Enter<BattleLoopState>();
+        }
+
+        private void PlaceEnemy()
+        {
+            GameEntity enemy = _enemyFactory.CreateEnemy(EnemyTypeId.Skeleton, _levelDataProvider.SkeletonStartPoint);
+            _weaponFactory.CreateWeapon(WeaponTypeId.SmallAxe, enemy.Id, CollisionLayer.Hero.AsMask());
         }
 
         private void PlaceHero()
         {
             GameEntity hero = _heroFactory.CreateHero(_levelDataProvider.StartPoint);
-            _weaponFactory.CreateWeapon(WeaponTypeId.SmallAxe, hero.Id);
+            _weaponFactory.CreateWeapon(WeaponTypeId.SmallAxe, hero.Id, CollisionLayer.Enemy.AsMask());
         }
     }
 }

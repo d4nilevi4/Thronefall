@@ -8,6 +8,7 @@ namespace Thronefall.Gameplay.Enemies
         public EnemiesFeature(ISystemFactory systemFactory)
         {
             Add(systemFactory.Create<EnemyDeathSystem>());
+            Add(systemFactory.Create<ProcessEnemyWeaponDeathSystem>());
             
             Add(systemFactory.Create<FinalizeEnemyDeathProcessingSystem>());
         }

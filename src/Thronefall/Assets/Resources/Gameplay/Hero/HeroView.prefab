@@ -388,6 +388,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Animator: {fileID: 6069276155137980764}
+  _takeDamageMat: {fileID: 2100000, guid: 82a865bce2abe7b4a9251333b501de0b, type: 2}
+  _renderer: {fileID: 1437013642784086431}
 --- !u!1 &739664958740862623
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ namespace Thronefall.Gameplay.Combat
             _identifierService = identifierService;
         }
         
-        public GameEntity CreateWeapon(WeaponTypeId typeId, int owner)
+        public GameEntity CreateWeapon(WeaponTypeId typeId, int owner, int targetLayerMask)
         {
             return CreateEntity.Empty()
                 .AddId(_identifierService.Next())
@@ -33,7 +33,7 @@ namespace Thronefall.Gameplay.Combat
                 .AddRotationSpeed(10f)
                 .With(x => x.isRotateWeaponWhileAttacking = true)
                 .AddDamage(new Damage() { Value = 1, })
-                .AddHitLayerMask(CollisionLayer.Enemy.AsMask())
+                .AddHitLayerMask(targetLayerMask)
                 ;
         }
     }

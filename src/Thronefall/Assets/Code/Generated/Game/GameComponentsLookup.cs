@@ -63,14 +63,15 @@ public static class GameComponentsLookup {
     public const int PositionOffset = 52;
     public const int RotateTowardsVelocity = 53;
     public const int RotationSpeed = 54;
-    public const int ChooseClosestTarget = 55;
-    public const int CopyTargetPosition = 56;
-    public const int LerpToTargetPosition = 57;
-    public const int Target = 58;
-    public const int Transform = 59;
-    public const int WorldPosition = 60;
+    public const int ChooseClosestEnemyTarget = 55;
+    public const int ChooseHeroTarget = 56;
+    public const int CopyTargetPosition = 57;
+    public const int LerpToTargetPosition = 58;
+    public const int Target = 59;
+    public const int Transform = 60;
+    public const int WorldPosition = 61;
 
-    public const int TotalComponents = 61;
+    public const int TotalComponents = 62;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -128,7 +129,8 @@ public static class GameComponentsLookup {
         "PositionOffset",
         "RotateTowardsVelocity",
         "RotationSpeed",
-        "ChooseClosestTarget",
+        "ChooseClosestEnemyTarget",
+        "ChooseHeroTarget",
         "CopyTargetPosition",
         "LerpToTargetPosition",
         "Target",
@@ -192,7 +194,8 @@ public static class GameComponentsLookup {
         typeof(Thronefall.Gameplay.PositionOffset),
         typeof(Thronefall.Gameplay.Rotation.RotateTowardsVelocity),
         typeof(Thronefall.Gameplay.Rotation.RotationSpeed),
-        typeof(Thronefall.Gameplay.Targeting.ChooseClosestTarget),
+        typeof(Thronefall.Gameplay.Targeting.ChooseClosestEnemyTarget),
+        typeof(Thronefall.Gameplay.Targeting.ChooseHeroTarget),
         typeof(Thronefall.Gameplay.Targeting.CopyTargetPosition),
         typeof(Thronefall.Gameplay.Targeting.LerpToTargetPosition),
         typeof(Thronefall.Gameplay.Targeting.Target),
