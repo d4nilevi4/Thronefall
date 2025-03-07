@@ -1760,7 +1760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d19ea026ae7438e9523a27f27c74261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EntityView: {fileID: 0}
+  EntityView: {fileID: 7882873252487623654}
   Transform: {fileID: 2362112632706586864}
 --- !u!114 &1685242688776445368
 MonoBehaviour:
@@ -1774,7 +1774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aae21c08f0040baab82e422a3d7f39c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EntityView: {fileID: 0}
+  EntityView: {fileID: 7882873252487623654}
   HeroAnimator: {fileID: 5518853538059706120}
 --- !u!114 &9086055515871065669
 MonoBehaviour:
@@ -1788,7 +1788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9936960c8ae74c98a8397cf6c5303ec1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EntityView: {fileID: 0}
+  EntityView: {fileID: 7882873252487623654}
   Rigidbody: {fileID: 7097253807804807837}
 --- !u!114 &8459461786221810967
 MonoBehaviour:
@@ -1802,7 +1802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 937ea22884a149e990d99d03687e1b95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EntityView: {fileID: 0}
+  EntityView: {fileID: 7882873252487623654}
   CameraLookPoint: {fileID: 4461496570656232475}
 --- !u!1 &5593885445234247850
 GameObject:
