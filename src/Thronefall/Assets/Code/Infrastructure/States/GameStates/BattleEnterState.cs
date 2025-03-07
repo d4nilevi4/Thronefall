@@ -1,8 +1,8 @@
 using Thronefall.Common;
 using Thronefall.Gameplay.Combat;
-using Thronefall.Gameplay.Enemies;
 using Thronefall.Gameplay.Hero;
 using Thronefall.Gameplay.Levels;
+using Thronefall.Gameplay.StaticData;
 
 namespace Thronefall.Infrastructure
 {
@@ -12,17 +12,20 @@ namespace Thronefall.Infrastructure
         private readonly IGameStateMachine _stateMachine;
         private readonly ILevelDataProvider _levelDataProvider;
         private readonly IWeaponFactory _weaponFactory;
+        private readonly IStaticDataService _staticDataService;
 
         public BattleEnterState(
             IHeroFactory heroFactory,
             IGameStateMachine stateMachine, 
             ILevelDataProvider levelDataProvider,
-            IWeaponFactory weaponFactory)
+            IWeaponFactory weaponFactory,
+            IStaticDataService staticDataService)
         {
             _heroFactory = heroFactory;
             _stateMachine = stateMachine;
             _levelDataProvider = levelDataProvider;
             _weaponFactory = weaponFactory;
+            _staticDataService = staticDataService;
         }
 
         protected override void Enter()
@@ -36,7 +39,8 @@ namespace Thronefall.Infrastructure
         private void PlaceHero()
         {
             GameEntity hero = _heroFactory.CreateHero(_levelDataProvider.StartPoint);
-            _weaponFactory.CreateWeapon(WeaponTypeId.SmallAxe, hero.Id, CollisionLayer.Enemy.AsMask());
+            HeroConfig config = _staticDataService.GetHeroConfig();
+            _weaponFactory.CreateWeapon(config.WeaponConfig, hero.Id, CollisionLayer.Enemy.AsMask());
         }
     }
 }

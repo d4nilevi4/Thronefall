@@ -14,25 +14,28 @@ namespace Thronefall.Gameplay.Combat
             _identifierService = identifierService;
         }
         
-        public GameEntity CreateWeapon(WeaponTypeId typeId, int owner, int targetLayerMask)
+        public GameEntity CreateWeapon(
+            WeaponConfig weaponConfig, 
+            int owner, 
+            int targetLayerMask)
         {
             return CreateEntity.Empty()
                 .AddId(_identifierService.Next())
                 .AddWorldPosition(VectorExtensions.FarAway())
-                .AddViewPath("Gameplay/Weapons/Axe/Axe_Small")
-                .AddWeaponTypeId(typeId)
+                .AddViewPrefab(weaponConfig.View)
+                .AddWeaponTypeId(weaponConfig.WeaponTypeId)
                 .With(x => x.isWeapon = true)
                 .AddWeaponOwner(owner)
                 .AddTarget(owner)
-                .AddPositionOffset(new Vector3(0f, 2f, 0f))
+                .AddPositionOffset(weaponConfig.Offset)
                 .With(x => x.isLerpToTargetPosition = true)
                 .AddSpeed(15f)
                 .With(x => x.isSyncTransformPosition = true)
                 .With(x => x.isMeleeWeapon = true)
-                .AddAttackRadius(1.5f)
-                .AddRotationSpeed(10f)
+                .AddAttackRadius(weaponConfig.AttackRadius)
+                .AddRotationSpeed(weaponConfig.RotationSpeed)
                 .With(x => x.isRotateWeaponWhileAttacking = true)
-                .AddDamage(new Damage() { Value = 1, })
+                .AddDamage(weaponConfig.Damage)
                 .AddHitLayerMask(targetLayerMask)
                 ;
         }

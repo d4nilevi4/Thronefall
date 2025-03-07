@@ -13,5 +13,10 @@ namespace Thronefall.Infrastructure
         {
             return Resources.Load<T>(path);
         }
+
+        public T[] LoadAll<T>(string path) where T : Object
+        {
+            return Resources.LoadAll<T>(path);
+        }
     }
 }

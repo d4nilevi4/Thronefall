@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Thronefall.Common;
 using Thronefall.Gameplay.Combat;
+using Thronefall.Gameplay.StaticData;
 using UnityEngine;
 using Zenject;
 
@@ -17,12 +18,15 @@ namespace Thronefall.Gameplay.Enemies
 
         private float _spawnTimer;
         private int _currentSpawnDataIndex;
+        private IStaticDataService _staticDataService;
 
         [Inject]
         private void Construct(
             IEnemyFactory enemyFactory,
-            IWeaponFactory weaponFactory)
+            IWeaponFactory weaponFactory,
+            IStaticDataService staticDataService)
         {
+            _staticDataService = staticDataService;
             _weaponFactory = weaponFactory;
             _enemyFactory = enemyFactory;
         }
@@ -42,8 +46,9 @@ namespace Thronefall.Gameplay.Enemies
                 
                 for (int i = 0; i < spawnData.Count; i++)
                 {
-                    GameEntity enemy = _enemyFactory.CreateEnemy(spawnData.EnemyTypeId, transform.position);
-                    _weaponFactory.CreateWeapon(WeaponTypeId.SmallAxe, enemy.Id, CollisionLayer.Hero.AsMask());
+                    EnemyConfig enemyConfig = _staticDataService.GetEnemyConfig(spawnData.EnemyTypeId);
+                    GameEntity enemy = _enemyFactory.CreateEnemy(enemyConfig, transform.position);
+                    _weaponFactory.CreateWeapon(enemyConfig.WeaponConfig, enemy.Id, CollisionLayer.Hero.AsMask());
                 }
 
                 _spawnTimer = SpawnData[_currentSpawnDataIndex].Cooldown;

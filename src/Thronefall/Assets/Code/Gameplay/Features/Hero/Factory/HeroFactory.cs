@@ -39,8 +39,8 @@ namespace Thronefall.Gameplay.Hero
                 .With(x => x.isMovementAvailable = true)
                 .With(x => x.isAttacker = true)
                 .With(x => x.isChooseClosestEnemyTarget = true)
-                .AddMaxHp(20f)
-                .AddCurrentHp(20f)
+                .AddMaxHp(config.MaxHp)
+                .AddCurrentHp(config.MaxHp)
                 ;
         }
     }

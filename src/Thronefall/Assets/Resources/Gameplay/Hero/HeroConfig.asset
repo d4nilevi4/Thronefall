@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ViewPrefab>k__BackingField: {fileID: 7882873252487623654, guid: 37f82f017452afc4f86be96465e9fa66, type: 3}
   <Speed>k__BackingField: 5
+  <RotationSpeed>k__BackingField: 5
+  <WeaponConfig>k__BackingField: {fileID: 11400000, guid: cdaa4bba039449146aa45124d3bb7135, type: 2}
+  <MaxHp>k__BackingField: 100

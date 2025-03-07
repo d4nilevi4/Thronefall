@@ -6219,11 +6219,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6569838699452572937, guid: 5695b56dda0f47348a8c60d812cc1b06, type: 3}
       propertyPath: SpawnData.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6569838699452572937, guid: 5695b56dda0f47348a8c60d812cc1b06, type: 3}
       propertyPath: SpawnData.Array.data[0].Count
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6569838699452572937, guid: 5695b56dda0f47348a8c60d812cc1b06, type: 3}
       propertyPath: SpawnData.Array.data[1].Count
@@ -6231,7 +6231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6569838699452572937, guid: 5695b56dda0f47348a8c60d812cc1b06, type: 3}
       propertyPath: SpawnData.Array.data[0].Cooldown
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6569838699452572937, guid: 5695b56dda0f47348a8c60d812cc1b06, type: 3}
       propertyPath: SpawnData.Array.data[1].Cooldown

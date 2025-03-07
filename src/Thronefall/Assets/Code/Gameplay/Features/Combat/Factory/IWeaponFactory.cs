@@ -2,6 +2,6 @@
 {
     public interface IWeaponFactory
     {
-        GameEntity CreateWeapon(WeaponTypeId typeId, int owner, int targetLayerMask);
+        GameEntity CreateWeapon(WeaponConfig weaponConfig, int owner, int targetLayerMask);
     }
 }

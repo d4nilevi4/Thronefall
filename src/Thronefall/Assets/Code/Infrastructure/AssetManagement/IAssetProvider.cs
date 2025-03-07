@@ -6,5 +6,6 @@ namespace Thronefall.Infrastructure
     {
         GameObject LoadAsset(string path);
         T LoadAsset<T>(string path) where T : Object;
+        T[] LoadAll<T>(string path) where T : Object;
     }
 }

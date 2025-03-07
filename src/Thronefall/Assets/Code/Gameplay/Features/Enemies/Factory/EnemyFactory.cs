@@ -14,17 +14,17 @@ namespace Thronefall.Gameplay.Enemies
             _identifierService = identifierService;
         }
         
-        public GameEntity CreateEnemy(EnemyTypeId typeId, Vector3 at)
+        public GameEntity CreateEnemy(EnemyConfig enemyConfig, Vector3 at)
         {
             return CreateEntity.Empty()
                 .AddId(_identifierService.Next())
                 .AddWorldPosition(at)
                 .AddVelocity(Vector3.zero)
                 .AddDirection(Vector3.zero)
-                .AddSpeed(2f)
+                .AddSpeed(enemyConfig.Speed)
                 .With(x => x.isRotateTowardsVelocity = true)
-                .AddRotationSpeed(5f)
-                .AddViewPath("Gameplay/Skeleton/Skeleton")
+                .AddRotationSpeed(enemyConfig.RotationSpeed)
+                .AddViewPrefab(enemyConfig.View)
                 .With(x => x.isPhysXMovable = true)
                 .With(x => x.isAffectedByGravity = true)
                 .With(x => x.isSlideOnSurface = true)
@@ -32,11 +32,11 @@ namespace Thronefall.Gameplay.Enemies
                 .With(x => x.isAttacker = true)
                 .With(x => x.isChooseHeroTarget = true)
                 .With(x => x.isAgent = true)
-                .AddEnemyTypeId(typeId)
+                .AddEnemyTypeId(enemyConfig.EnemyTypeId)
                 .With(x => x.isEnemy = true)
                 .AddAgentDestination(at)
-                .AddMaxHp(20f)
-                .AddCurrentHp(20f)
+                .AddMaxHp(enemyConfig.MaxHp)
+                .AddCurrentHp(enemyConfig.MaxHp)
                 ;
         }
     }
