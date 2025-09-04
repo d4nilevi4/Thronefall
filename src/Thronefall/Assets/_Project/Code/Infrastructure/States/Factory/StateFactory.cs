@@ -1,19 +1,27 @@
 using Zenject;
 
-namespace Thronefall.Infrastructure
+namespace Thronefall.Infrastructure;
+
+public class StateFactory : IStateFactory
 {
-    public class StateFactory : IStateFactory
+    private readonly DiContainer _globalContainer;
+    private readonly ISceneContainerProvider _sceneContainerProvider;
+
+    public StateFactory(
+        DiContainer globalContainer,
+        ISceneContainerProvider sceneContainerProvider)
     {
-        private readonly DiContainer _container;
+        _globalContainer = globalContainer;
+        _sceneContainerProvider = sceneContainerProvider;
+    }
 
-        public StateFactory(DiContainer container)
+    public T GetState<T>() where T : class, IExitableState
+    {
+        if (typeof(ILocalState).IsAssignableFrom(typeof(T)))
         {
-            _container = container;
+            return _sceneContainerProvider.Container.Resolve<T>();
         }
-
-        public T GetState<T>() where T : class, IExitableState
-        {
-            return _container.Resolve<T>();
-        }
+            
+        return _globalContainer.Resolve<T>();
     }
 }

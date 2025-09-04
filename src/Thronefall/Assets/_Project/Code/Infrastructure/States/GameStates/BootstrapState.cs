@@ -1,25 +1,30 @@
-﻿using Thronefall.Gameplay.StaticData;
+﻿using Cysharp.Threading.Tasks;
+using Thronefall.Gameplay.StaticData;
 
-namespace Thronefall.Infrastructure
+namespace Thronefall.Infrastructure;
+
+public class BootstrapState : IState
 {
-    public class BootstrapState : SimpleState
+    private readonly IGameStateMachine _stateMachine;
+    private readonly IStaticDataService _staticDataService;
+
+    public BootstrapState(
+        IGameStateMachine stateMachine,
+        IStaticDataService staticDataService)
     {
-        private readonly IGameStateMachine _stateMachine;
-        private readonly IStaticDataService _staticDataService;
+        _stateMachine = stateMachine;
+        _staticDataService = staticDataService;
+    }
 
-        public BootstrapState(
-            IGameStateMachine stateMachine,
-            IStaticDataService staticDataService)
-        {
-            _stateMachine = stateMachine;
-            _staticDataService = staticDataService;
-        }
+    public async UniTask Enter()
+    {
+        _staticDataService.LoadAll();
 
-        protected override void Enter()
-        {
-            _staticDataService.LoadAll();
-            
-            _stateMachine.Enter<LoadingBattleState, string>("Battle");
-        }
+        await _stateMachine.Enter<LoadProgressState>();
+    }
+
+    public UniTask Exit()
+    {
+        return UniTask.CompletedTask;
     }
 }

@@ -8,7 +8,9 @@ namespace Thronefall.Infrastructure
     public class SwitchToEntrySceneInEditor : MonoBehaviour
     {
 #if UNITY_EDITOR
-        private const int EntrySceneIndex = 0;
+        public const string CURRENT_SCENE_NAME_KEY = "CurrentSceneNameKey"; 
+        
+        public bool LoadCurrentScene;
 
         private void Awake()
         {
@@ -18,7 +20,13 @@ namespace Thronefall.Infrastructure
             foreach (GameObject root in gameObject.scene.GetRootGameObjects())
                 root.SetActive(false);
 
-            SceneManager.LoadScene(EntrySceneIndex);
+            if(LoadCurrentScene)
+            {
+                PlayerPrefs.SetString(CURRENT_SCENE_NAME_KEY, SceneManager.GetActiveScene().name);
+                PlayerPrefs.Save();
+            }
+
+            SceneManager.LoadScene(Scenes.BOOT);
         }
 #endif
     }

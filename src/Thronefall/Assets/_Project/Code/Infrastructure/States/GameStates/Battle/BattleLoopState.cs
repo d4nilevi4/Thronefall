@@ -1,10 +1,9 @@
 using Thronefall.Common;
 using Thronefall.Gameplay;
-using Zenject;
 
 namespace Thronefall.Infrastructure
 {
-    public class BattleLoopState : EndOfFrameExitState, IFixedUpdatableState
+    public class BattleLoopState : EndOfFrameExitState, ILocalState, IFixedUpdatableState
     {
         private readonly ISystemFactory _systems;
         private BattleFeature _battleFeature;

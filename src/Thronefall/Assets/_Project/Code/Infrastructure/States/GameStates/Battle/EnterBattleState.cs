@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using Thronefall.Common;
 using Thronefall.Gameplay.Combat;
 using Thronefall.Gameplay.Hero;
@@ -6,39 +7,43 @@ using Thronefall.Gameplay.StaticData;
 
 namespace Thronefall.Infrastructure
 {
-    public class BattleEnterState : SimpleState
+    public class EnterBattleState : LocalEnterState
     {
         private readonly IHeroFactory _heroFactory;
         private readonly IGameStateMachine _stateMachine;
-        private readonly ILevelDataProvider _levelDataProvider;
+        private readonly IBattleLevelDataProvider _battleLevelDataProvider;
         private readonly IWeaponFactory _weaponFactory;
         private readonly IStaticDataService _staticDataService;
 
-        public BattleEnterState(
+        public EnterBattleState(
             IHeroFactory heroFactory,
             IGameStateMachine stateMachine, 
-            ILevelDataProvider levelDataProvider,
+            IBattleLevelDataProvider battleLevelDataProvider,
             IWeaponFactory weaponFactory,
             IStaticDataService staticDataService)
         {
             _heroFactory = heroFactory;
             _stateMachine = stateMachine;
-            _levelDataProvider = levelDataProvider;
+            _battleLevelDataProvider = battleLevelDataProvider;
             _weaponFactory = weaponFactory;
             _staticDataService = staticDataService;
         }
 
-        protected override void Enter()
+        public override async UniTask Enter()
         {
             PlaceHero();
             
-            _stateMachine.Enter<BattleLoopState>();
+            await _stateMachine.Enter<BattleLoopState>();
+        }
+
+        public override UniTask Exit()
+        {
+            return UniTask.CompletedTask;
         }
         
-
         private void PlaceHero()
         {
-            GameEntity hero = _heroFactory.CreateHero(_levelDataProvider.StartPoint);
+            GameEntity hero = _heroFactory.CreateHero(_battleLevelDataProvider.HeroSpawnPoint);
             HeroConfig config = _staticDataService.GetHeroConfig();
             _weaponFactory.CreateWeapon(config.WeaponConfig, hero.Id, CollisionLayer.Enemy.AsMask());
         }

@@ -42,11 +42,6 @@ namespace Thronefall.Gameplay.StaticData
             _enemyConfigs = _assetProvider
                 .LoadAll<EnemyConfig>("Gameplay/Enemies")
                 .ToDictionary(x=> x.EnemyTypeId, x => x);
-
-            foreach (EnemyTypeId load in _enemyConfigs.Keys)
-            {
-                Debug.Log(load);
-            }
         }
     }
 }

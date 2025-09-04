@@ -12,14 +12,14 @@ namespace Thronefall.Infrastructure
             _stateMachine = stateMachine;
             _sceneLoader = sceneLoader;
         }
-        
+
         public async UniTask Enter(string sceneName)
         {
-             await _sceneLoader.LoadSceneAsync(sceneName);
-            _stateMachine.Enter<BattleEnterState>();
+            await _sceneLoader.LoadSceneAsync(sceneName);
+            await _stateMachine.Enter<EnterBattleState>();
         }
 
-        public UniTask Exit() => 
+        public UniTask Exit() =>
             default;
     }
 }

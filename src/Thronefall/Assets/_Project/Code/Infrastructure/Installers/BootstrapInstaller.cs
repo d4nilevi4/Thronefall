@@ -48,9 +48,8 @@ namespace Thronefall.Infrastructure
         private void BindGameStates()
         {
             Container.BindInterfacesAndSelfTo<BootstrapState>().AsSingle();
-            Container.BindInterfacesAndSelfTo<LoadingBattleState>().AsSingle();
-            Container.BindInterfacesAndSelfTo<BattleEnterState>().AsSingle();
-            Container.BindInterfacesAndSelfTo<BattleLoopState>().AsSingle();
+            Container.BindInterfacesAndSelfTo<LoadProgressState>().AsSingle();
+            Container.BindInterfacesAndSelfTo<LoadLocalState>().AsSingle();
         }
 
         private void BindContexts()
@@ -70,6 +69,7 @@ namespace Thronefall.Infrastructure
         {
             Container.Bind<ICoroutineRunner>().FromInstance(this).AsSingle();
             Container.Bind<IIdentifierService>().To<IdentifierService>().AsSingle();
+            Container.Bind<ISceneContainerProvider>().To<SceneContainerProvider>().AsSingle();
         }
 
         private void BindAssetManagementServices()
@@ -93,8 +93,7 @@ namespace Thronefall.Infrastructure
         {
             Container.Bind<ITimeService>().To<UnityTimeService>().AsSingle();
             Container.Bind<IGroundDetectionService>().To<SphereCastGroundDetectionService>().AsSingle();
-            Container.Bind<ICameraProvider>().To<CameraProvider>().AsSingle();
-            Container.Bind<ILevelDataProvider>().To<LevelDataProvider>().AsSingle();
+            Container.Bind<IBattleLevelDataProvider>().To<BattleLevelDataProvider>().AsSingle();
             Container.Bind<IStaticDataService>().To<StaticDataService>().AsSingle();
         }
 
