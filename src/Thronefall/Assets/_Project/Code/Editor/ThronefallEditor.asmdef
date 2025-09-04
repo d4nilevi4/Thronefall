@@ -1,0 +1,16 @@
+{
+    "name": "ThronefallEditor",
+    "rootNamespace": "ThronefallEditor",
+    "references": ["GUID:24535f8b225042c4cb4688aab0b58c34"],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
